@@ -6,11 +6,12 @@
 # |_____|_____|   __|________|__|__|__|__| |____|
 #	      |__|
 #
-#	Author		-	Usergh0st
-#	Repository	-	https://github.com/Usergh0st/Machinepwn
+# Author:	Usergh0st
+# Repository:   https://github.com/Usergh0st/Machinepwn
+# Rechme:	phoneghost88@gmail.com
 
 # Bspwm monitors setup. 
-bspc monitor -d 1 2 3 4 5 6 7
+bspc monitor -d 1 2 3 4 5 6 7 8 
 
 # Fix java applications
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -38,11 +39,17 @@ bspc config pointer_follows_focus     	false
 bspc config pointer_follows_monitor   	true
 bspc config automatic_scheme          	longest_side
 bspc config initial_polarity          	second_child
-
 bspc config pointer_modifier          	mod4
 bspc config pointer_action1           	move
 bspc config pointer_action2           	resize_side
 bspc config pointer_action3           	resize_corner
+
+#  ______         __              
+# |   __ \.--.--.|  |.-----.-----.
+# |      <|  |  ||  ||  -__|__ --|
+# |___|__||_____||__||_____|_____|
+                                
+bspc rule -a alacritty-float state=floating
 
 
 #  _______ __               __   __              
@@ -50,5 +57,9 @@ bspc config pointer_action3           	resize_corner
 # |__     |   _|  _  |   _||   _|  ||     |  _  |
 # |_______|____|___._|__|  |____|__||__|__|___  |
 #                                         |_____|
-                                         
+
+# Set monitor resolution script.
+~/.config/bspwm/src/screen.sh &
+
+# Starting sxhkd daemon.
 pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
