@@ -7,8 +7,11 @@
 # repository: 	https://github.com/Usergh0st/Machinepwn
 # Reachme: 	phoneghost88@gmail.com
 
+# Simples hotkey daemon.
+# Simples shortcuts.
+
 # ----------------------------------------------
-# 	    Common keyboard shortcuts
+# |	    Common keyboard shortcuts 	       |
 # ----------------------------------------------
 
 # Open the terminal alacritty emulator.
@@ -19,10 +22,53 @@ super + Return
 super + alt + Return
 	alacritty --class alacritty-float,alacritty-float
 
-# Close and kill the window
+# Program launcher rofi and dmenu.
+super + d
+	rofi -show drun -icons
+
+# Close and kill the window.
 super + w
 	bspc node -k
 
-# Focus or send to the given desktop
+# Focus or send to the given desktop.
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+# make sxhkd reload file.
+super + x
+	pkill -USR1 -x sxhkd
+
+# ----------------------------------------------
+# |	    Keyboard shortcuts bspwm           |
+# ----------------------------------------------
+
+
+# Restarting bspwm tiling window manager.
+super + r
+	bspc wm -r
+
+# Quit bspwm tiling window manager.
+super + q
+	bspc quit
+
+# Set window state.
+super + {t,f,s}
+	bspc node -t {tiled,floating,fullscreen}
+	
+# ----------------------------------------------
+# |	  Move and resize bspwm windows        |
+# ----------------------------------------------
+
+
+# expand a window by moving one of its side outward.
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward.
+super + shift + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a bspwm floating window.
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

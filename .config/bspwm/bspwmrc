@@ -59,7 +59,10 @@ bspc rule -a alacritty-float state=floating
 #                                         |_____|
 
 # Set monitor resolution script.
-~/.config/bspwm/src/screen.sh &
+~/.config/bspwm/src/monitor.sh &
 
-# Starting sxhkd daemon.
+# Ser a random wallpaper bspwm.
+~/.config/bspwm/src/wall.sh &
+
+# Starting sxhkd hotkey daemon.
 pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
