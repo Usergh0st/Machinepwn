@@ -1,0 +1,46 @@
+
+
+
+[window]
+decorations = "None"
+opacity = 0.75
+dynamic_padding = true
+dynamic_title = true
+padding = { x = 10, y = 10 }
+
+
+[font]
+normal = { family = "Cascadia Code", style = "Regular" }
+builtin_box_drawing = true
+size = 11.5
+
+[cursor]
+blink_interval = 550
+unfocused_hollow = true
+thickness = 0.1
+style = "Beam"
+
+[selection]
+save_to_clipboard = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[bell]
+animation = "Linear"
+duration = 0
+
+[terminal.shell]
+program = "/bin/bash"
+
+[general]
+live_config_reload = true
+
+# Alacritty config machinepwn.
+
+import = ["~/.config/alacritty/colors.toml"]
+
+
+
+

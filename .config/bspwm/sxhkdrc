@@ -26,6 +26,10 @@ super + alt + Return
 super + d
 	rofi -show drun -icons
 
+# Rofi show window alternative.
+super + alt + d
+	rofi -show window
+
 # Close and kill the window.
 super + w
 	bspc node -k
@@ -34,15 +38,29 @@ super + w
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# Cycle between desktops instead of just switching.
+super + tap
+	bspc desktop -f next
+
+# Cycle between desktops instead of just switching.
+super + alt + tap
+	bspc desktop -f prev
+
+# Send windows to other desktops without switching.
+super + shift + {1-8,0}
+	bspc node -d '^{1-8,10}'
 
 # make sxhkd reload file.
 super + x
 	pkill -USR1 -x sxhkd
 
+# Restart the sxhkd keyboard shortcut daemon.
+super + alt + h
+	pkill sxhkd || sxhkd &
+
 # ----------------------------------------------
 # |	    Keyboard shortcuts bspwm           |
 # ----------------------------------------------
-
 
 # Restarting bspwm tiling window manager.
 super + r
@@ -59,7 +77,6 @@ super + {t,f,s}
 # ----------------------------------------------
 # |	  Move and resize bspwm windows        |
 # ----------------------------------------------
-
 
 # expand a window by moving one of its side outward.
 super + alt + {Left,Down,Up,Right}

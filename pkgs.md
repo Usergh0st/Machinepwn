@@ -14,6 +14,7 @@
 - sxhkd
 - rofi
 - feh
+- thunar
 
 ### virt-packages
 
