@@ -1,21 +1,40 @@
-### Packages nesesary the desktop...
+#### Packages nesesary the desktop...
 
 > Hello users/a this note reatch the packages nesesary.
 
-### xorg packages
+#### Xorg packages.
 
 - xorg-xrandr
+- xorg-server
+- xorg-xinit
+- xorg-xsetroot
+- xorg-xinput
 
-### bspwm packages
+#### Bspwm packages.
 
 - alacritty
-- xdotool
+- bspwm
+- sxhkd
 - awk
 - sxhkd
 - rofi
 - feh
 - thunar
+- neovim
 
-### virt-packages
+#### Virt-packages / QEMU / Virt-manager / Virtualbox /
 
-- virtualbox-guest-utils
+- spice-vdagent 
+- qemu-guest-agent
+- xf86-video-intel
+- xf86-input-libinput
+- mesa
+- libva-mesa-driver 
+- mesa-vdpau
+
+#### Others
+
+- net-tools
+- git
+- fastfetch
+- wget
