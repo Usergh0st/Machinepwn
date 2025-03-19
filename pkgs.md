@@ -38,3 +38,6 @@
 - git
 - fastfetch
 - wget
+- zsh / zsh-autosuggestions / zsh-syntax-highlighting
+- eza
+- aur/scrub
