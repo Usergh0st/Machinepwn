@@ -10,9 +10,9 @@ user=$(whoami)
 wallpapers_dir="/home/${user}/.config/bspwm/walls"
 wallpapers=($(find "$wallpapers_dir" -type f -name "*.png" -o -name "*.jpg" -o -name "*.jpeg"))
 
-# Random wallpaper select
+# Random wallpaper select.
 random_wallpaper="${wallpapers[RANDOM % ${#wallpapers[@]}]}"
 
-# Set a random wallpaper using feh
+# Set a random wallpaper using feh.
 feh --bg-scale "$random_wallpaper"
 

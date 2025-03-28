@@ -2,16 +2,18 @@
 # .-----.-----.|  |--.----.----.
 # |-- __|__ --||     |   _|  __|
 # |_____|_____||__|__|__| |____|
-                              
-# Author:	Usergh0st
+
+# Author:	    Usergh0st
 # Repository: 	https://github.com/Usergh0st/Machinepwn.git
-# Rechme: 	phoneghost88@gmail.com
+# Rechme: 	    phoneghost88@gmail.com
 
 # Confusion of the zshrc, shortcuts and other things, focused on pentesting and more.
 # Edit this setting to adjust it your way, user hacks the world.
- 
+
 # Depends: eza zsh zsh-syntax-highlighting zsh-autosuggestions aur/scrub
-                    
+# If not running interactively, don't do anything.
+[[ $- != *i* ]] && return
+
 #         __ __                          
 # .---.-.|  |__|.---.-.-----.-----.-----.
 # |  _  ||  |  ||  _  |__ --|  -__|__ --|
@@ -33,6 +35,8 @@ alias ll="eza --icons=always --color=always -la"
 
 # History of commands used in zsh only 500.
 
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+
 HISTFILE=~/.zhistory
 HISTSIZE=500
 SAVEHIST=500
@@ -52,7 +56,7 @@ setopt hist_find_no_dups
 # |__|             |_____|                 
 
 # Plugins to use in the zsh.
- 
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
@@ -62,10 +66,21 @@ source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 # |    ___||  |  |     |  __||   _|  ||  _  |     |__ --|
 # |___|    |_____|__|__|____||____|__||_____|__|__|_____|
 
-# Undetectable erasure inspired by s4vitar.
-funtion rmk () {
+# Undetectable erasure inspired by s4vitars
+function rmk(){
 	scrub -p dod $1
-	shred -zun 8 -v 1$
+	shred -zun 5 -v $1
 }
 
+#               __                      __   __                    
+# .-----.-----.|  |--.    .-----.-----.|  |_|__|.-----.-----.-----.
+# |-- __|__ --||     |    |  _  |  _  ||   _|  ||  _  |     |__ --|
+# |_____|_____||__|__|    |_____|   __||____|__||_____|__|__|_____|
+#                               |__|                               
 
+setopt AUTOCD              
+setopt PROMPT_SUBST        
+setopt MENU_COMPLETE      
+setopt LIST_PACKED		  
+setopt AUTO_LIST           
+setopt COMPLETE_IN_WORD

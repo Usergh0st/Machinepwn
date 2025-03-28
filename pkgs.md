@@ -21,6 +21,7 @@
 - feh
 - thunar
 - neovim
+- polybar
 
 #### Virt-packages / QEMU / Virt-manager / Virtualbox /
 
@@ -40,4 +41,5 @@
 - wget
 - zsh / zsh-autosuggestions / zsh-syntax-highlighting
 - eza
+- bat
 - aur/scrub

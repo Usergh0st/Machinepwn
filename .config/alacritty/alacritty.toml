@@ -1,5 +1,4 @@
-
-
+# Alacritty config machinepwn...
 
 [window]
 decorations = "None"
@@ -7,7 +6,6 @@ opacity = 0.75
 dynamic_padding = true
 dynamic_title = true
 padding = { x = 10, y = 10 }
-
 
 [font]
 normal = { family = "Cascadia Code", style = "Regular" }
@@ -32,15 +30,9 @@ animation = "Linear"
 duration = 0
 
 [terminal.shell]
-program = "/bin/bash"
+program = "/bin/zsh"
 
 [general]
 live_config_reload = true
 
-# Alacritty config machinepwn.
-
 import = ["~/.config/alacritty/colors.toml"]
-
-
-
-

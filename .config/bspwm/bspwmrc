@@ -6,20 +6,20 @@
 # |_____|_____|   __|________|__|__|__|__| |____|
 #	      |__|
 #
-# Author:	Usergh0st
+# Author:	    Usergh0st
 # Repository:   https://github.com/Usergh0st/Machinepwn
-# Rechme:	phoneghost88@gmail.com
+# Rechme:	    phoneghost88@gmail.com
 
 # Bspwm monitors setup. 
 bspc monitor -d 1 2 3 4 5 6 7 8 
 
-# Fix java applications
+# Fix java applications.
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Fix cursor problem with bspwm
+# Fix cursor problem with bspwm.
 xsetroot cursor_name left_ptr &
 
-# Set environment variables
+# Set environment variables.
 export PATH="$HOME/.config/bspwm/src:$PATH"
 
 #                    ___ __        
@@ -27,15 +27,15 @@ export PATH="$HOME/.config/bspwm/src:$PATH"
 # |  __|  _  |     |   _|  ||  _  |
 # |____|_____|__|__|__| |__||___  |
 #			    |_____|
-				    
-bspc config window_gap          	5
-bspc config split_ratio          	0.52
+    
+bspc config window_gap          	    5
+bspc config split_ratio          	    0.52
 bspc config pointer_motion_interval   	7
 bspc config removal_adjustment        	true
-bspc config borderless_monocle   	true
-bspc config gapless_monocle      	true
-bspc config pointer_follows_focus 	true
-bspc config gapless_monocle 		true
+bspc config borderless_monocle   	    true
+bspc config gapless_monocle      	    true
+bspc config pointer_follows_focus 	    true
+bspc config gapless_monocle 		    true
 bspc config single_monocle            	true
 bspc config focus_follows_pointer     	true
 bspc config pointer_follows_focus     	false
@@ -51,9 +51,8 @@ bspc config pointer_action3           	resize_corner
 # |   __ \.--.--.|  |.-----.-----.
 # |      <|  |  ||  ||  -__|__ --|
 # |___|__||_____||__||_____|_____|
-                                
-bspc rule -a alacritty-float state=floating
 
+bspc rule -a alacritty-float state=floating
 
 #  _______ __               __   __              
 # |     __|  |_.---.-.----.|  |_|__|.-----.-----.

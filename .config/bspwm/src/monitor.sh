@@ -30,7 +30,7 @@ else
 
     if [ -n "$BEST_RESOLUTION" ]; then
         xrandr --output "$SCREEN" --mode "$BEST_RESOLUTION"
-        echo "✅ Resolución ajustada a $BEST_RESOLUTION."
+        echo "Resolución ajustada a $BEST_RESOLUTION."
     else
         echo "No suitable resolution was detected."
     fi
