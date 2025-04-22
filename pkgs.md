@@ -43,3 +43,6 @@
 - eza
 - bat
 - aur/scrub
+- python-pywal
+- less
+- aur/ttf-maple -> https://aur.archlinux.org/ttf-maple.git

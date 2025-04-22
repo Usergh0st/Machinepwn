@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 # Simples script to set wallpapers using feh.
-# Script created by enríque gonzález aka (Usergh0st)
 
-user=$(whoami)
+username=$(whoami)
 
 # Choose wallpapers dir.
 
-wallpapers_dir="/home/${user}/.config/bspwm/walls"
+wallpapers_dir="/home/${username}/.config/bspwm/walls"
 wallpapers=($(find "$wallpapers_dir" -type f -name "*.png" -o -name "*.jpg" -o -name "*.jpeg"))
 
 # Random wallpaper select.

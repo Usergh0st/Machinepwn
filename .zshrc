@@ -11,8 +11,12 @@
 # Edit this setting to adjust it your way, user hacks the world.
 
 # Depends: eza zsh zsh-syntax-highlighting zsh-autosuggestions aur/scrub
+
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
+
+# Use software rendering.
+export LIBGL_ALWAYS_SOFTWARE=1
 
 #         __ __                          
 # .---.-.|  |__|.---.-.-----.-----.-----.

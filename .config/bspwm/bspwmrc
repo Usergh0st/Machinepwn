@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-#
+
 #  __                                            
 # |  |--.-----.-----.--.--.--.--------.----.----.
 # |  _  |__ --|  _  |  |  |  |        |   _|  __|
 # |_____|_____|   __|________|__|__|__|__| |____|
-#	      |__|
-#
+#   	      |__|
+
 # Author:	    Usergh0st
 # Repository:   https://github.com/Usergh0st/Machinepwn
 # Rechme:	    phoneghost88@gmail.com
@@ -29,8 +29,9 @@ export PATH="$HOME/.config/bspwm/src:$PATH"
 #			    |_____|
     
 bspc config window_gap          	    5
-bspc config split_ratio          	    0.52
+bspc config split_ratio          	    0.55
 bspc config pointer_motion_interval   	7
+bspc config paddingless_monocle         true
 bspc config removal_adjustment        	true
 bspc config borderless_monocle   	    true
 bspc config gapless_monocle      	    true
@@ -38,7 +39,7 @@ bspc config pointer_follows_focus 	    true
 bspc config gapless_monocle 		    true
 bspc config single_monocle            	true
 bspc config focus_follows_pointer     	true
-bspc config pointer_follows_focus     	false
+bspc config pointer_follows_focus     	true
 bspc config pointer_follows_monitor   	true
 bspc config automatic_scheme          	longest_side
 bspc config initial_polarity          	second_child
