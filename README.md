@@ -6,4 +6,4 @@ A configuration focused on minimalist and clean pentesting and ethical hacking, 
 
 Hello users, this is an overview of how the environment is looking. It's worth noting that the polybar I'm working with is taken from the [ghostkz](https://github.com/gh0stzk/dotfiles) dotfiles, specifically the rice [varinka](https://github.com/gh0stzk/dotfiles/tree/master/config/bspwm/rices/varinka).
 
-[machinepwn-preview](https://github.com/Usergh0st/Machinepwn/blob/main/screenshots/preview.png?raw=true)
+![machinepwn-preview](https://github.com/Usergh0st/Machinepwn/blob/main/screenshots/preview.png?raw=true)
