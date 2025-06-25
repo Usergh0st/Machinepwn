@@ -5,7 +5,7 @@
 
 # Author:	    Usergh0st
 # Repository: 	https://github.com/Usergh0st/Machinepwn.git
-# Rechme: 	    phoneghost88@gmail.com
+# Rechme: 	    usergh0stmail@proton.me
 
 # Confusion of the zshrc, shortcuts and other things, focused on pentesting and more.
 # Edit this setting to adjust it your way, user hacks the world.

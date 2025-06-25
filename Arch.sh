@@ -4,9 +4,9 @@
 # Only arch linux avaliable installacion no others distros. 
 # This script required root user passworld.
 
-# Author: Enríque González aka (Usergh0st)
-# repository: https://github.com/Usergh0st/Machinepwn.git
-# Reachme: phoneghost88@gmail.com
+# Author: -> Enríque González aka (Usergh0st)
+# repository: -> https://github.com/Usergh0st/Machinepwn.git
+# Reachme: -> usergh0stmail@proton.me
 
 # Colors in the installer.
 Cyan="\e[1;36m"
@@ -21,36 +21,37 @@ user=$(whoami)
 
 # Status indicators.
 
-# [!] : Warning or call for attention                               : Blue color
-# [/] : Working on some process                                     : Cyan color
-# [x] : Error or problem with the execution process                 : Red color
-# [✔] : The process or operation was carried out successfully       : Green color
+# [!] -> Warning or call for attention                               :: Blue color
+# [/] -> Working on some process                                     :: Cyan color
+# [x] -> Error or problem with the execution process                 :: Red color
+# [✔] -> The process or operation was carried out successfully       :: Green color
 
 # The banner Enríque González Aka. (Usergh0st).
 Usergh0st_banner () {
     echo ""
     reset
-    echo -e "${Cyan}            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  " 
-    echo -e "${Cyan}            ░░░░░░▒░▓░░░░░░█░░▒▒░░░░░░░░░░░░░░░░░░  " 
-    echo -e "${Cyan}            ░░░░░░░░▓█░░▒░░▒████▓▓░░░░░░░░░░░░░░░░  " 
-    echo -e "${Cyan}            ░░░░░░░░░░░▒▒██▓░░░░░▒██░░░▒░░░▒░░░░░░  " 
-    echo -e "${Cyan}            ░░░░░▒▒░▒▓▒██▒░░░░░░░░░▒██░░▓▓▒░░░░░░░  "
-    echo -e "${Cyan}            ░░▒▒▒░░░░░▓█▒░░░░░░░░░░░░██▒▒▓░░░░░░░░  "
-    echo -e "${Cyan}            ░░░░░░▒▒█▒██▒░░░░░░░░░░░░▓█▓█░░▓▓▒░░░░  "
-    echo -e "${Cyan}            ░▒▓▓░░▒░▒▒██▒▒███▓░▒████░▓██░░▒▒░▓░░▒░  "
-    echo -e "${Cyan}            ░░▒▓░▒▒▓▒███▒░███▒░░███▒░▓██░░░░░░▒▒░░  "
-    echo -e "${Cyan}            ░▒░░▒░▓▒░▒███▒▒░░▒██░░▒▒███▓░░██░░░░░░  "
-    echo -e "${Cyan}            ░▒░▒▒▒░░█████▓█▒▒░░░▓▒██▓▓███▒░░░░░▒▒░  "
-    echo -e "${Cyan}            ░░░▓░▒██████████▓▓█▒███▒▓██▓██▓▓▓▓▒░▒░  "
-    echo -e "${Cyan}            ░█░▒░░█████▓░██▒▒████▒░█████▓█▒▓░▒▓░░░  "
-    echo -e "${Cyan}            ▒░░░░▓▒▒▓█▓█▒░░▓▒█░▓░░▒█▓█▒░▒███▓░░░░░  "
-    echo -e "${Cyan}            ▒▒▒█▒████░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░█▓███▓░▓▒░░  "
-    echo -e "${Cyan}            ░░▒░▓██▓▒▒▒▓▒▓▓▓▓▓▓▓▓▓▓▓▓▒░▒▒████░░░░░  "
-    echo -e "${Cyan}            ▒░░░██▒▓▓░░▓▒▓▓▓▓▒░▒▓▓▓▓▓▒░▒▓░▒██▓▓░░░  "
-    echo -e "${Cyan}            ░░░░██▒▒▒▓▓▓▒▓▓▓▓▓▓▓▓▓▓▓▓▒▒█▒▒▓██▓░░░░  "
-    echo -e "${Cyan}            ░░░░░▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▒▒▒▒▒░░░░░░  "
-    echo -e "${Cyan}            ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  "
-    echo ""
+    echo -e "${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠄⠀⠰⡐⠀⠀⠀⠀⠀⠀⢀⣄⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⣿⡆⠀⠀⠀⠄⠀⠈⢀⣤⣤⣬⣥⣤⣀⡀⠀⠀⠀⠂⠀⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠂⠀⠀⠑⠀⠀⠙⠃⠵⠀⢀⣴⣿⡿⠿⠿⠿⠿⠿⠿⢿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⢰⣶⠀⠱⣆⠐⢦⡀⣠⣿⡟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⣷⣆⡀⠸⠇⣀⠀⣐⢔⠈⠰⠰⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠁⠰⠀⡾⠷⣴⣿⡿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⡀⠀⠉⠀⠛⠂⢀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⣔⢄⠘⢄⡀⠉⠀⠀⢠⣾⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣷⡄⠀⠟⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀
+    ⢀⠀⠀⠉⡈⠀⣀⠑⣤⢾⡆⢸⣿⣿⠀⠀⠀⣀⣀⣀⠀⠀⠀⠀⢀⣀⣀⡀⠀⠀⣿⣿⣧⠰⠃⡀⠀⣤⠒⠊⠁⠀⠀⠀⠀
+    ⠀⠑⢤⣤⣄⠀⠉⠢⠀⠠⠓⢊⣿⣿⠀⠀⣾⣿⣿⣿⣷⠀⠀⢰⣿⣿⣿⣷⠀⠀⣿⣿⣿⠀⣀⠀⠤⠀⠀⠐⠀⠀⠠⠀⠀
+    ⠀⠀⠈⡉⠯⠃⠸⠗⠠⣀⡻⢶⣽⣿⡀⠀⠻⣿⣿⣿⡟⠀⡀⠸⣿⣿⣿⡟⠀⢀⣿⣿⣿⠀⠙⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀
+    ⠐⠤⠄⠀⠀⢀⠀⢄⡠⡍⠛⠻⣿⣿⣧⡀⠀⠉⠉⠉⠀⣾⣷⡄⠈⠉⠉⠀⣠⣾⣿⣿⡇⠀⠀⢈⣠⣶⠆⠀⠀⠀⠀⠂⠀
+    ⠀⠀⠀⠔⣄⢤⡀⠈⠀⠀⣠⣾⣿⣿⡿⣿⣶⣶⠂⠀⠀⠁⠈⠁⠀⠐⣶⣾⣿⡿⣩⣿⣿⣦⡄⠸⠝⠀⠀⠀⠀⠆⢐⠀⠀
+    ⠀⠈⠦⡀⠀⠀⠑⡄⢀⣼⣿⣿⣹⣿⣿⣷⣿⣿⣀⠸⡀⢠⡆⢠⡇⢀⣿⣿⠏⣴⣿⣿⢿⢋⣾⣄⠀⠀⠀⠀⠀⡀⠉⠀⠀
+    ⠈⣀⡀⠈⠃⡀⠈⢹⣟⢯⡿⣿⣏⠻⣯⣿⣎⡻⢿⣶⣷⣼⣧⣼⣷⣿⠟⠁⣴⣿⣿⠋⣸⣾⣿⣿⣦⠒⠒⠊⠉⢀⠐⠁⠀
+    ⠠⠛⠃⠠⠄⡀⡀⣾⣻⣿⣿⢟⣿⣦⡈⠙⡿⣿⣭⣍⣹⢿⣿⣿⡿⠁⠀⣾⣿⡟⣯⡾⣿⣯⡿⢛⣡⡇⠀⣠⠔⠁⠠⠀⠀
+    ⠄⠀⡀⠀⠀⠃⣬⡛⣛⠛⠾⣯⣟⢾⡅⠀⠀⠙⢻⠎⢻⠆⠙⡏⠁⠀⠰⡿⠛⣵⡿⠛⠉⣉⣵⣾⣿⣿⡏⠁⠀⠀⢀⠀⠀
+    ⢈⡆⠀⢴⣆⣠⣿⣿⡿⣷⣆⠈⠉⢡⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⡄⠀⠾⣟⣯⣿⣿⣿⡅⠀⢤⠀⡀⠀⠀
+    ⠀⠑⢄⠀⠉⢸⣷⣖⣛⣋⠙⠿⠄⢸⠀⣷⣿⣷⣶⣿⣿⣶⣷⣷⣾⣿⣶⣷⣾⡆⡇⠀⠻⠟⣱⣿⣭⣾⣇⠍⠁⠀⠠⠀⠀
+    ⢀⠀⠀⠶⠀⣿⣿⠿⣿⣿⣷⠦⠀⢸⠀⣿⣿⣿⣿⣿⡟⠉⠈⢿⣿⣿⣿⣿⣿⡇⡇⠀⢠⢾⠿⠶⣶⣿⣿⡄⢀⠀⠀⠀⠀
+    ⠀⠀⠄⠀⠀⣿⣷⡏⠀⠀⠀⣰⡀⢻⠀⣿⣿⣿⣿⣿⣷⣄⣰⣿⣿⣿⣿⣿⣿⡇⡿⠀⣰⡀⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠻⣿⣷⣀⣠⣴⣿⡿⢾⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⡷⠾⣿⣿⣶⣶⣿⣿⡿⠃⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠹⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠗⠉⠉⠉⠉⠉⠉⠀         ${Reset}"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 }
 
 # The banner of the installer. 
@@ -83,6 +84,7 @@ Installer_banner () {
 
 First_steps () {
     Usergh0st_banner
+    echo -e ""
     echo -e "${Cyan} [/] ➜ ${White}Installing ${Green}blackarch${White} repositories and cloning ${Green}paru${Reset}" ; sleep 1.1
     echo ""
     pacman -Syu --noconfirm
