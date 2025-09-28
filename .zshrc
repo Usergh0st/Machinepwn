@@ -3,14 +3,19 @@
 # |-- __|__ --||     |   _|  __|
 # |_____|_____||__|__|__| |____|
 
+#  _______             __    
+# |   _   |.----.----.|  |--.
+# |       ||   _|  __||     |
+# |___|___||__| |____||__|__|
+
+
 # Author:	    Usergh0st
-# Repository: 	https://github.com/Usergh0st/Machinepwn.git
+# Repository:       https://github.com/Usergh0st/Machinepwn.git
 # Rechme: 	    usergh0stmail@proton.me
 
-# Confusion of the zshrc, shortcuts and other things, focused on pentesting and more.
-# Edit this setting to adjust it your way, user hacks the world.
-
+# Edit this file settings to adjust it your way, user hack the world.
 # Depends: eza zsh zsh-syntax-highlighting zsh-autosuggestions aur/scrub
+# 27.09.2025 7:42 PM
 
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return

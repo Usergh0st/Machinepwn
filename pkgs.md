@@ -1,6 +1,6 @@
-#### Packages nesesary the desktop...
+### Packages nesesary the desktop arch linux...
 
-> Hello users/a this note reatch the packages nesesary.
+> Hello users/a this part reatch the packages nesesary, for arch linux.
 
 #### Xorg packages.
 
@@ -46,3 +46,21 @@
 - python-pywal
 - less
 - aur/ttf-maple -> https://aur.archlinux.org/ttf-maple.git
+
+### Packages nesesary the desktop debian/kali linux...
+
+> In this part reatch the packages nesesary, for kali linux.
+
+#### Sever xorg packages.
+
+- xserver-xorg-core
+- xserver-xorg-video-fbdev
+- xserver-xorg-input-all
+- x11-xserver-utils
+- xinit
+
+### Bspwm packages
+
+- bspwm
+- sxhkd
+- 

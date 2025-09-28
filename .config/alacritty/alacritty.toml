@@ -1,39 +1,93 @@
+#  _______ __                   __ __   __         
+# |   _   |  |.---.-.----.----.|__|  |_|  |_.--.--.
+# |       |  ||  _  |  __|   _||  |   _|   _|  |  |
+# |___|___|__||___._|____|__|  |__|____|____|___  |
+#                                           |_____|
 # Alacritty config machinepwn...
 # Config support virtual machines...
+# Usergh0st - https://github.com/Usergh0st/Machinepwn.git
+# 28.09.2025 08:59 AM
+
+# Alacritty window how show configuration.
+# config - https://alacritty.org/config-alacritty.html#window 
 
 [window]
-decorations = "None"
+decorations = "Full"
 opacity = 1.0
 dynamic_padding = true
 dynamic_title = true
 padding = { x = 10, y = 10 }
+startup_mode = "Windowed"
+title = "Machinepwn Alacritty"
+resize_increments = true
+
+
+# Alacritty fonts configuration
+# config - https://alacritty.org/config-alacritty.html#font
 
 [font]
 normal = { family = "Cascadia Code", style = "Regular" }
-builtin_box_drawing = false
-size = 11.3
+bold = { family = "Cascadia Code", style = "Bold" }
+italic = { family = "Cascadia Code", style = "Italic" }
+builtin_box_drawing = true
+size = 12.5
+
+# Cursor configuration
+# config - https://alacritty.org/config-alacritty.html#cursor
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
 
 [cursor]
 blink_interval = 550
-unfocused_hollow = true
-thickness = 0.1
-style = "Beam"
+unfocused_hollow = false
+thickness = 0.15
+
+[mouse]
+hide_when_typing = true
+
+# Selection configuration
+# config - https://alacritty.org/config-alacritty.html#selection
 
 [selection]
 save_to_clipboard = true
 
+# Scrolling config buffer
+# config - https://alacritty.org/config-alacritty.html#scrolling
+
 [scrolling]
-history = 500
-multiplier = 2
+history = 1000
+multiplier = 3
+
+# The bell configuration
+# config - https://alacritty.org/config-alacritty.html#bell
 
 [bell]
-animation = "Linear"
-duration = 0
+animation = "EaseOutSine"
+duration = 110
+command = { program = "paplay", args = ["/usr/share/sounds/freedesktop/stereo/dialog-error.oga"] }
+
+# The terminal shell
+# config - https://alacritty.org/config-alacritty.html#terminal
 
 [terminal.shell]
 program = "/bin/zsh"
+args = []
+
+# The general config alacritty.
+# config - https://alacritty.org/config-alacritty.html#general
 
 [general]
+ipc_socket = true
 live_config_reload = true
-
+working_directory = "${HOME}"
 import = ["~/.config/alacritty/colors.toml"]
+
+# The env configuration.
+# config - https://alacritty.org/config-alacritty.html#env
+
+[env]
+TERM = "alacritty"
+WINIT_X11_SCALE_FACTOR = "1.0"
+
