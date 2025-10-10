@@ -4,6 +4,4 @@ A configuration focused on minimalist and clean pentesting and ethical hacking, 
 
 ### Machinepwn environment preview.
 
-Hello users, this is an overview of how the environment is looking. It's worth noting that the polybar I'm working with is taken from the [ghostkz](https://github.com/gh0stzk/dotfiles) dotfiles, specifically the rice [varinka](https://github.com/gh0stzk/dotfiles/tree/master/config/bspwm/rices/varinka).
-
-![machinepwn-preview](https://github.com/Usergh0st/Machinepwn/blob/main/previews/preview.png?raw=true)
+Hello dear user, here is a preview of how the machinepwn environment will look after installation.

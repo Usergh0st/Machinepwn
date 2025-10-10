@@ -63,4 +63,8 @@
 
 - bspwm
 - sxhkd
-- 
+- polybar
+
+### Others
+
+- pipewire

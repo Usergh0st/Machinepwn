@@ -10,7 +10,7 @@
 
 # Author:	Usergh0st
 # Repository	https://github.com/Usergh0st/Machinepwn.git
-# Rechme:	usergh0stmail@proton.me
+# Mail:		usergh0stmail@proton.me
 
 # Edit this file settings to adjust it your way, user hack the world.
 # Depends: eza zsh zsh-syntax-highlighting zsh-autosuggestions
