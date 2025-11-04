@@ -11,46 +11,44 @@
 
 # Alacritty colors config machinepwn...
 # Usergh0st - https://github.com/Usergh0st/Machinepwn.git
-# 28.09.2025 08:36 AM
+# 22.10.2025 03:19 PM
 
 # The color config dot
 # config - https://alacritty.org/config-alacritty.html#colors
 
 # Default colors
 [colors.primary]
-foreground = "#1c483e"
-background = "#10131c"
+foreground = "#cd9191"
+background = "#0f0f0f"
 
 # Cursor colors
 [colors.cursor]
-text = "#10131c" 
-cursor = "#1c483e"
+text = "#812625" 
+cursor = "#261314"
 
 # Vi colors
 [colors.vi_mode_cursor]
-text = "#10131c"
-cursor = "#1c483e"
+text = "#cd9191"
+cursor = "#261314"
 
 # Normal colors
 [colors.normal]
-black = "#12121e"
-red = "#2a7b50"
-green = "#153e3d"
-yellow = "#5b8f45"
-blue = "#1b5044"
-magenta = "#21594e"
-cyan = "#155347"
-white = "#6fba57"
+black = "#4A201F"
+red = "#4B1F20"
+green = "#4F2425"
+yellow = "#732526"
+blue = "#474447"
+magenta = "#882726"
+cyan = "#cd9191"
+white = "#8f6565"
 
 # Bright colors
 [colors.bright]
-black = "#12121e"
-red = "#254831"
-green = "#0e2c37"
-yellow = "#c8e056"
-blue = "#338c4a"
-magenta = "#13363a"
-cyan = "#103035"
-white = "#0c2b37"
-
-
+black = "#4A201F"
+red = "#261314"
+green = "#4B1F20"
+yellow = "#4F2425"
+blue = "#732526"
+magenta = "#474447"
+cyan = "#882726"
+white = "#cd9191"

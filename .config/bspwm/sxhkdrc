@@ -3,90 +3,93 @@
 # |__ --|_   _||     ||    <|  _  ||   _|  __|
 # |_____|__.__||__|__||__|__|_____||__| |____|
 
-# Author: 	Usergh0st
-# repository: 	https://github.com/Usergh0st/Machinepwn
-# Mail: 	usergh0stmail@proton.me
-# Last Update:  03.10.2025 7:38 PM
+#  __           __   __                
+# |  |--.-----.|  |_|  |--.-----.--.--.
+# |     |  _  ||   _|    <|  -__|  |  |
+# |__|__|_____||____|__|__|_____|___  |
+#                               |_____|
 
-# Simples hotkey daemon.
-# Simples shortcuts.
+# Author: Usergh0st
+# repository: https://github.com/Usergh0st/Machinepwn
+# Mail: usergh0stmail@proton.me
+# Last Update: 24.10.2025 3:39 PM
 
-# ----------------------------------------------
-# |	    Common keyboard shortcuts 	       |
-# ----------------------------------------------
+# Simples sxhkd hotkey daemon.
+# Simples shortcuts for you.
+
+# Important the keyboard layout has to be.
+# In American English to avoid conflict with the keys.
+# US-English | required: xdotool for decrease/increase
+
+# -- [Common keyboard shortcuts] --
 
 # Open the terminal alacritty emulator.
 super + Return
 	alacritty
 
-# Open the terminal alacritty floating.
-super + alt + Return
-	alacritty --class alacritty-float,alacritty-float
-
 # Program launcher rofi and dmenu.
+# Create a rofi launcher applet.
+# Remplaze in the future.
 super + d
 	rofi -show drun -icons
-
-# Rofi show window alternative.
-super + alt + d
-	rofi -show window
 
 # Close and kill the window.
 super + w
 	bspc node -k
 
-# Focus or send to the given desktop.
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
-
-# Cycle between desktops instead of just switching.
-super + tap
-	bspc desktop -f next
-
-# Cycle between desktops instead of just switching.
-super + alt + tap
-	bspc desktop -f prev
-
-# Send windows to other desktops without switching.
-super + shift + {1-8,0}
-	bspc node -d '^{1-8,10}'
-
-# make sxhkd reload file.
-super + x
-	pkill -USR1 -x sxhkd
-
 # Restart the sxhkd keyboard shortcut daemon.
-super + alt + h
-	pkill sxhkd || sxhkd &
-
-# ----------------------------------------------
-# |	    Keyboard shortcuts bspwm           |
-# ----------------------------------------------
+super + ctrl + x
+	pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
 
 # Restarting bspwm tiling window manager.
-super + r
+super + ctrl + r
 	bspc wm -r
 
 # Quit bspwm tiling window manager.
-super + q
+super + ctrl + q
 	bspc quit
 
-# Set window state.
-super + {t,f,s}
-	bspc node -t {tiled,floating,fullscreen}
-	
-# ----------------------------------------------
-# |	  Move and resize bspwm windows        |
-# ----------------------------------------------
+# -- [Node states and flags] --
 
-# expand a window by moving one of its side outward.
+# Set bspwm the node state
+super + alt + {s,f,t}
+	bspc node -t {floating,fullscreen,tiled}
+
+# -- [Focus and swap nodes] --
+
+# Rotate bspwm desktop.
+super + Tab
+	bspc node @/ --rotate {90,-90}
+
+# Switching workspace 1-5 letft and right.
+super + {Left,Right}
+	bspc desktop -f {prev,next}
+
+# Move applications or things to a specific window.
+super + {_,alt + }{1-5,0}
+	bspc {desktop -f,node -d} {1-5,10}
+
+# Drag any app or thing to any workspace.
+super + alt + {n,m}
+	bspc node -d {prev,next} --follow
+
+# -- [Move and resize nodes bspwm] --
+
+# Intelligently adjust windows to the available space.
+super + alt + b
+	bspc node @/ -B
+
+# When a window is floating mode you can use this for increase / decrease floating node size.
+super + alt + equal
+	xdotool getactivewindow windowmove --relative -- -50 -25 && xdo resize -w +100 -h +50
+
+super + alt + minus	
+	xdotool getactivewindow windowmove --relative -- +50 +25 && xdo resize -w -100 -h -50
+
+# When a window is floating mode you can move this window.
 super + alt + {Left,Down,Up,Right}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward.
-super + shift + {Left,Down,Up,Right}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
-# move a bspwm floating window.
-super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Close all windows in bspwm desktop.
+super + alt + k
+	bspc query -N -d | xargs -I id -n 1 bspc node id -c

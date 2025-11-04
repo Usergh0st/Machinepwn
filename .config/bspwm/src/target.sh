@@ -6,7 +6,7 @@ if [ $# -eq 0 ]; then
 	if [ -e "${FILE}" ]; then
 		batcat ${FILE}
 	else
-		printf "No Target"
+		printf ""
 	fi
 elif [ "$1" = "reset" ]; then
 	rm /tmp/target

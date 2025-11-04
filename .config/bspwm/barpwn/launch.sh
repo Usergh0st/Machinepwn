@@ -10,8 +10,9 @@
 # polybar-msg cmd quit
 
 # Otherwise you can use the nuclear option:
-# killall -q polybar
-# Launch the polybar BarPwn.
 
+# Launch the polybar BarPwn.
+killall -q polybar
 killall -q barpwn ; pidof -q barpwn || { polybar -q barpwn -c "${HOME}"/.config/bspwm/barpwn/config.ini & }
 
+echo "BarPwn Launched..."

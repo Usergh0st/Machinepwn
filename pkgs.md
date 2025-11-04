@@ -58,13 +58,18 @@
 - xserver-xorg-input-all
 - x11-xserver-utils
 - xinit
+- xinput
 
 ### Bspwm packages
 
 - bspwm
 - sxhkd
 - polybar
+- rofi
 
 ### Others
 
 - pipewire
+- nitrogen -> "Temporary package, remplace for script to control wallpapers"
+- xdotool
+- papirus-icon-theme

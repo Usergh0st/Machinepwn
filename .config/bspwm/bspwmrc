@@ -1,60 +1,80 @@
 #!/usr/bin/env bash
 
-#  __                                            
-# |  |--.-----.-----.--.--.--.--------.----.----.
-# |  _  |__ --|  _  |  |  |  |        |   _|  __|
-# |_____|_____|   __|________|__|__|__|__| |____|
-#   	      |__|
+#  ______                                          
+# |   __ \.-----.-----.--.--.--.--------.----.----.
+# |   __ <|__ --|  _  |  |  |  |        |   _|  __|
+# |______/|_____|   __|________|__|__|__|__| |____|
+#               |__|
+
+# The central configuration file for bspwm largely controls how the environment looks. 
+# Configure this to your liking, dear user. doc -> https://wiki.archlinux.org/title/Bspwm_(Espa%C3%B1ol)
 
 # Author:	Usergh0st
-# Repository:   https://github.com/Usergh0st/Machinepwn
-# Mail:	    	usergh0stmail@proton.me
-# Last Update:  07.10.2025 8:59 PM
+# Repository:	https://github.com/Usergh0st/Machinepwn.git
+# Mail:		usergh0stmail@proton.me
+# Last Update:  18.10.2025 2:56 PM
 
-# Bspwm monitors setup. 
-bspc monitor -d 1 2 3 4 5 6 7 8 
+# Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
+# Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
 
-# Fix java applications.
+#  _______              
+# |    ___|.-----.--.--.
+# |    ___||     |  |  |
+# |_______||__|__|\___/ 
+
+# -- Environment variables --
 export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH="${HOME}/.config/bspwm/src:${PATH}"
+export XDG_CURRENT_DESKTOP='bspwm'
 
-# Fix cursor problem with bspwm.
-xsetroot cursor_name left_ptr &
+#  ________              __                                       
+# |  |  |  |.-----.----.|  |--.-----.-----.---.-.----.-----.-----.
+# |  |  |  ||  _  |   _||    <|__ --|  _  |  _  |  __|  -__|__ --|
+# |________||_____|__|  |__|__|_____|   __|___._|____|_____|_____|
+#                                   |__|                          
 
-# Set environment variables.
-export PATH="$HOME/.config/bspwm/src:$PATH"
+# -- Monitors --
+bspc monitor -d 1 2 3 4 5
 
-#                    ___ __        
-# .----.-----.-----.'  _|__|.-----.
-# |  __|  _  |     |   _|  ||  _  |
-# |____|_____|__|__|__| |__||___  |
-#			    |_____|
-    
-bspc config window_gap          	    5
-bspc config split_ratio          	    0.55
-bspc config pointer_motion_interval   	7
-bspc config paddingless_monocle         true
-bspc config removal_adjustment        	true
-bspc config borderless_monocle   	    true
-bspc config gapless_monocle      	    true
-bspc config pointer_follows_focus 	    true
-bspc config gapless_monocle 		    true
-bspc config single_monocle            	true
-bspc config focus_follows_pointer     	true
-bspc config pointer_follows_focus     	true
-bspc config pointer_follows_monitor   	true
-bspc config automatic_scheme          	longest_side
-bspc config initial_polarity          	second_child
-bspc config pointer_modifier          	mod4
-bspc config pointer_action1           	move
-bspc config pointer_action2           	resize_side
-bspc config pointer_action3           	resize_corner
+#  ______               ___ __        
+# |      |.-----.-----.'  _|__|.-----.
+# |   ---||  _  |     |   _|  ||  _  |
+# |______||_____|__|__|__| |__||___  |
+#                              |_____|
 
-#  ______         __              
-# |   __ \.--.--.|  |.-----.-----.
-# |      <|  |  ||  ||  -__|__ --|
-# |___|__||_____||__||_____|_____|
+# -- External Rules --
+bspc config external_rules_command "${HOME}"/.config/bspwm/src/Rules.sh
 
-bspc rule -a alacritty-float state=floating
+# -- Aesthetics --
+bspc config border_width 2
+bspc config window_gap 3
+bspc config top_padding 0
+bspc config bottom_padding 0
+bspc config left_padding 0
+bspc config right_padding 0
+
+bspc config focused_border_color "#6f2524"
+bspc config normal_border_color "#191f1a"
+bspc config presel_feedback_color "#1d1918"
+
+# -- General behavior --
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+bspc config pointer_follows_monitor true
+bspc config pointer_motion_interval 7
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
+# -- States --
+bspc config automatic_scheme longest_side
+bspc config split_ratio 0.50
+bspc config pointer_focus_follows_monitor
+
+# -- Layout --
+bspc config initial_polarity second_child
+bspc config removal_adjustment true
 
 #  _______ __               __   __              
 # |     __|  |_.---.-.----.|  |_|__|.-----.-----.
@@ -62,11 +82,15 @@ bspc rule -a alacritty-float state=floating
 # |_______|____|___._|__|  |____|__||__|__|___  |
 #                                         |_____|
 
-# Set monitor resolution script.
-~/.config/bspwm/src/monitor.sh &
+# -- Auto-Start --
+~/.config/bspwm/src/screen.sh &
 
-# Ser a random wallpaper bspwm.
-~/.config/bspwm/src/wall.sh &
+# -- Launch Polybar --
+~/.config/bspwm/barpwn/launch.sh &
 
-# Starting sxhkd hotkey daemon.
+# -- Start sxhkd daemon
 pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
+
+# -- Restore wallpaper with nitrogen --
+# -- Remplaze with script in the future --
+nitrogen --restore
