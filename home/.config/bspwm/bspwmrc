@@ -7,12 +7,12 @@
 #               |__|
 
 # The central configuration file for bspwm largely controls how the environment looks. 
-# Configure this to your liking, dear user. doc -> https://wiki.archlinux.org/title/Bspwm_(Espa%C3%B1ol)
+# Configure this to your liking, dear user. doc -> [ https://wiki.archlinux.org/title/Bspwm_(Espa%C3%B1ol) ]
 
 # Author:	Usergh0st
 # Repository:	https://github.com/Usergh0st/Machinepwn.git
 # Mail:		usergh0stmail@proton.me
-# Last Update:  18.10.2025 2:56 PM
+# Last Update:  14.12.2025 3:51 PM
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
@@ -43,7 +43,7 @@ bspc monitor -d 1 2 3 4 5
 #                              |_____|
 
 # -- External Rules --
-bspc config external_rules_command "${HOME}"/.config/bspwm/src/Rules.sh
+bspc config external_rules_command "${HOME}"/.config/bspwm/src/ExternalRules.sh
 
 # -- Aesthetics --
 bspc config border_width 2
@@ -70,7 +70,6 @@ bspc config pointer_action3 resize_corner
 # -- States --
 bspc config automatic_scheme longest_side
 bspc config split_ratio 0.50
-bspc config pointer_focus_follows_monitor
 
 # -- Layout --
 bspc config initial_polarity second_child
@@ -82,13 +81,16 @@ bspc config removal_adjustment true
 # |_______|____|___._|__|  |____|__||__|__|___  |
 #                                         |_____|
 
+# -- Vmware Clip --
+vmware-user-suid-wrapper &>/dev/null &
+
 # -- Auto-Start --
 ~/.config/bspwm/src/screen.sh &
 
-# -- Launch Polybar --
+# -- Launch The Polybar BarPwn --
 ~/.config/bspwm/barpwn/launch.sh &
 
-# -- Start sxhkd daemon
+# -- Start sxhkd daemon --
 pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
 
 # -- Restore wallpaper with nitrogen --

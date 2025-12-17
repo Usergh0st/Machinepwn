@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# ==============================================================================
 #  __  __         __ __      _____   __
 # |  |/  |.---.-.|  |__|    |     |_|__|.-----.--.--.--.--.
 # |     < |  _  ||  |  |    |       |  ||     |  |  |_   _|
@@ -18,17 +18,18 @@
 # Repository: https://github.com/Usergh0st/Machinepwn.git
 # Mail: usergh0stmail@proton.me
 # Last Update: 19.10.2025 9:37 AM
+# Description: Kali Linux installer script.
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
 # Licensed under GPL-3.0 license
+# ===============================================================================
 
 # The gloval variables for the script.
 Backup_folder=~/Machinepwn-backup
 Error_log=~/Machinepwn.log
-
-USER=$(whoami)
-CURRENT_DIRECTORY=$(pwd)
+User=$(whoami)
+Path=$(pwd)
 
 # Colors use this script.
 Cyan="\e[1;36m"

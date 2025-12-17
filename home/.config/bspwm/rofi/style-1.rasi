@@ -1,6 +1,6 @@
-// Usergh0st - https://github.com/Usergh0st/Machinepwn.git
+// # Usergh0st - [ https://github.com/Usergh0st/Machinepwn.git ]
 
-// Configuration
+// # Configuration
 
 configuration {
 	modi:                       "drun,window";
@@ -16,11 +16,9 @@ configuration {
 
 @import "shared.rasi"
 
-// Main Window
+// # Main Window
 
 window {
-
-    /* properties for window widget */
 
     	transparency:                "real";
     	location:                    center;
@@ -30,15 +28,13 @@ window {
     	x-offset:                    0px;
     	y-offset:                    0px;
 
-    /* properties for all widgets */
-
     	enabled:                     true;
     	border-radius:               0px;
     	cursor:                      "default";
 	background-color:            @background;
 }
 
-// Main Box
+// # Main Box
 
 mainbox {
 
@@ -75,7 +71,7 @@ dummy {
 
 }
 
-// Inputbar
+// # Inputbar
 
 inputbar {
 
@@ -91,7 +87,7 @@ inputbar {
 
 textbox-prompt-colon {
 
-	font:			     "Cascadia Code Bold 9";
+	font:			     "Cascadia Code 9";
     	enabled:                     true;
     	expand:                      false;
     	str:                         "󰚈";
@@ -113,7 +109,7 @@ entry {
 
 }
 
-// Mode Switcher
+// # Mode Switcher
 
 mode-switcher{
 
@@ -141,7 +137,7 @@ button selected {
 }
 
 
-// Listview
+// # Listview
 
 listview {
     	enabled:                     true;
@@ -161,7 +157,7 @@ listview {
     	cursor:                      "default";
 }
 
-// Elements
+// # Elements
 
 element {
 
@@ -234,7 +230,7 @@ element-text {
 
 }
 
-// Message
+// # Message
 
 message {
 

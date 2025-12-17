@@ -12,7 +12,7 @@
 # Author: Usergh0st
 # repository: https://github.com/Usergh0st/Machinepwn
 # Mail: usergh0stmail@proton.me
-# Last Update: 24.10.2025 3:39 PM
+# Last Update: 15.12.2025 9:12 AM
 
 # Simples sxhkd hotkey daemon.
 # Simples shortcuts for you.
@@ -31,19 +31,15 @@ super + Return
 # Create a rofi launcher applet.
 # Remplaze in the future.
 super + d
-	rofi -show drun -icons
+	rofi -show drun -theme ~/.config/bspwm/rofi/style-3.rasi
 
 # Close and kill the window.
 super + w
 	bspc node -k
 
-# Restart the sxhkd keyboard shortcut daemon.
-super + ctrl + x
-	pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
-
-# Restarting bspwm tiling window manager.
+# Restarting bspwm tiling window manager, restart sxhkd, restart polybar.
 super + ctrl + r
-	bspc wm -r
+	bspc wm -r ; pkill -USR1 -x sxhkd ; polybar-msg cmd restart
 
 # Quit bspwm tiling window manager.
 super + ctrl + q
@@ -73,6 +69,14 @@ super + {_,alt + }{1-5,0}
 super + alt + {n,m}
 	bspc node -d {prev,next} --follow
 
+# Preselect the direction when you open the terminal or others applications.
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# Cancel the preselection direction.
+super + alt + space
+	bspc node -p cancel
+
 # -- [Move and resize nodes bspwm] --
 
 # Intelligently adjust windows to the available space.
@@ -87,9 +91,13 @@ super + alt + minus
 	xdotool getactivewindow windowmove --relative -- +50 +25 && xdo resize -w -100 -h -50
 
 # When a window is floating mode you can move this window.
-super + alt + {Left,Down,Up,Right}
+super + alt + {j,k,i,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# A custom resize the windows
+super + ctrl + {Left,Down,Up,Right}
+	~/.config/bspwm/src/Resize.sh {west,south,north,east}
+
 # Close all windows in bspwm desktop.
-super + alt + k
+super + alt + r
 	bspc query -N -d | xargs -I id -n 1 bspc node id -c

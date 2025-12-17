@@ -10,11 +10,11 @@
 # |____|_____||__||_____|__| |_____|
 
 # Alacritty colors config machinepwn...
-# Usergh0st - https://github.com/Usergh0st/Machinepwn.git
-# 22.10.2025 03:19 PM
+# Usergh0st = [ https://github.com/Usergh0st/Machinepwn.git ]
+# 16.12.2025 10:38 AM
 
-# The color config dot
-# config - https://alacritty.org/config-alacritty.html#colors
+# The color config dot.
+# config = [ https://alacritty.org/config-alacritty.html#colors ]
 
 # Default colors
 [colors.primary]

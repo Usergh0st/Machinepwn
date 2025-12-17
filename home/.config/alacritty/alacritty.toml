@@ -3,13 +3,20 @@
 # |       |  ||  _  |  __|   _||  |   _|   _|  |  |
 # |___|___|__||___._|____|__|  |__|____|____|___  |
 #                                           |_____|
+
+#  		     ___ __        
+# .----.-----.-----.'  _|__|.-----.
+# |  __|  _  |     |   _|  ||  _  |
+# |____|_____|__|__|__| |__||___  |
+#                           |_____|
+
 # Alacritty config machinepwn...
 # Config support virtual machines...
-# Usergh0st - https://github.com/Usergh0st/Machinepwn.git
-# 28.09.2025 08:59 AM
+# Usergh0st = [ https://github.com/Usergh0st/Machinepwn.git ]
+# 16.12.2025 10:24 AM
 
 # Alacritty window how show configuration.
-# config - https://alacritty.org/config-alacritty.html#window 
+# config =  [ https://alacritty.org/config-alacritty.html#window ]
 
 [window]
 decorations = "Full"
@@ -21,19 +28,8 @@ startup_mode = "Windowed"
 title = "Machinepwn Alacritty"
 resize_increments = true
 
-
-# Alacritty fonts configuration
-# config - https://alacritty.org/config-alacritty.html#font
-
-[font]
-normal = { family = "Cascadia Code", style = "Regular" }
-bold = { family = "Cascadia Code", style = "Bold" }
-italic = { family = "Cascadia Code", style = "Italic" }
-builtin_box_drawing = true
-size = 12.5
-
 # Cursor configuration
-# config - https://alacritty.org/config-alacritty.html#cursor
+# config = [ https://alacritty.org/config-alacritty.html#cursor ]
 
 [cursor.style]
 shape = "Beam"
@@ -48,20 +44,20 @@ thickness = 0.15
 hide_when_typing = true
 
 # Selection configuration
-# config - https://alacritty.org/config-alacritty.html#selection
+# config = [ https://alacritty.org/config-alacritty.html#selection ]
 
 [selection]
 save_to_clipboard = true
 
 # Scrolling config buffer
-# config - https://alacritty.org/config-alacritty.html#scrolling
+# config = [ https://alacritty.org/config-alacritty.html#scrolling ]
 
 [scrolling]
 history = 1000
 multiplier = 3
 
 # The bell configuration
-# config - https://alacritty.org/config-alacritty.html#bell
+# config = [ https://alacritty.org/config-alacritty.html#bell ]
 
 [bell]
 animation = "EaseOutSine"
@@ -69,23 +65,26 @@ duration = 110
 command = { program = "paplay", args = ["/usr/share/sounds/freedesktop/stereo/dialog-error.oga"] }
 
 # The terminal shell
-# config - https://alacritty.org/config-alacritty.html#terminal
+# config = [ https://alacritty.org/config-alacritty.html#terminal ]
 
 [terminal.shell]
 program = "/bin/zsh"
 args = []
 
 # The general config alacritty.
-# config - https://alacritty.org/config-alacritty.html#general
+# config = [ https://alacritty.org/config-alacritty.html#general ]
 
 [general]
 ipc_socket = true
 live_config_reload = true
 working_directory = "${HOME}"
-import = ["~/.config/alacritty/colors.toml"]
+import = [
+"~/.config/alacritty/colors.toml",
+"~/.config/alacritty/fonts.toml",
+]
 
 # The env configuration.
-# config - https://alacritty.org/config-alacritty.html#env
+# config = [ https://alacritty.org/config-alacritty.html#env ]
 
 [env]
 TERM = "alacritty"
