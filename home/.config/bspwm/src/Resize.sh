@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# ---------------------------------------------
+# =======================================================
 # Usergh0st
 # File: Resize.sh
 # https://github.com/Usergh0st/Machinepwn.git
 # 14.12.2025
 # Description: A simple script to resize the windows.
 # 	       Extracted from S4vitar Academy.
-# ---------------------------------------------
+# =======================================================
 
 if bspc query -N -n focused.floating > /dev/null; then
 	step=20

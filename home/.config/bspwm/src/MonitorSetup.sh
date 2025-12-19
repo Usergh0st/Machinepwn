@@ -34,8 +34,8 @@ case ${NUM_MONITORS} in
 		mode_1="$1"
 		rate_1="$2"
 
-		xrandr --output "${monitor_1}" --primary --mode "${mode_1}" --pos 0x0 --rate "${rate_1}"
-		bspc monitor "${monitor_1}" -d 1 2 3 4 5
+		xrandr --output "${monitor_1}" --primary --mode "${mode_1}" --pos 0x0 --auto --rate "${rate_1}"
+		bspc monitor "${monitor_1}" -d 1 2 3 4 5 6
 		;;
 	2)
 		monitor_1="$1"
@@ -49,7 +49,7 @@ case ${NUM_MONITORS} in
 		mode_2="$1"
 		rate_2="$2"
 
-		xrandr --output "${monitor_1}" --primary --mode "${mode_1}" --pos 0x0 --rate "${rate_1}" \
+		xrandr --output "${monitor_1}" --primary --mode "${mode_1}" --pos 0x0 --auto --rate "${rate_1}" \
 			--output "${monitor_2}" --mode "${mode_2}" --right-of "${monitor_1}" --auto --rate "${rate_2}"
 
 		bspc monitor "${monitor_1}" -d 1 2 3 4
