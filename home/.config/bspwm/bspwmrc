@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# ================================================================================================================
 #  ______                                          
 # |   __ \.-----.-----.--.--.--.--------.----.----.
 # |   __ <|__ --|  _  |  |  |  |        |   _|  __|
@@ -16,6 +16,7 @@
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
+# ================================================================================================================
 
 #  _______              
 # |    ___|.-----.--.--.
@@ -34,7 +35,11 @@ export XDG_CURRENT_DESKTOP='bspwm'
 #                                   |__|                          
 
 # -- Monitors --
-bspc monitor -d 1 2 3 4 5
+# -- If you don't like the current resolution. --
+# -- Replace [MonitorSetup.sh] with [CustomResolution.sh] and edit that's file. --
+# -- If you want a custom resolution go to -> [~/.config/bspwm/src] edit that's file. --
+# -- CustomResolution.sh --
+MonitorSetup.sh
 
 #  ______               ___ __        
 # |      |.-----.-----.'  _|__|.-----.
@@ -81,7 +86,8 @@ bspc config removal_adjustment true
 # |_______|____|___._|__|  |____|__||__|__|___  |
 #                                         |_____|
 
-# -- Vmware Clip --
+# -- Vmware Clip & Others --
+wmname LG3D &>/dev/null &
 vmware-user-suid-wrapper &>/dev/null &
 
 # -- Auto-Start --
