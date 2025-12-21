@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # ===========================================================================
 #  __  __         __ __      _____   __
 # |  |/  |.---.-.|  |__|    |     |_|__|.-----.--.--.--.--.
@@ -46,7 +46,7 @@ libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-de
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
 pkgs="polybar rofi alacritty nitrogen zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol \
-     fastfetch papirus-icon-theme awaita-icon-theme"
+     fastfetch papirus-icon-theme adwaita-icon-theme"
 
 # Logo function | Funcion del logo.
 logo () {
@@ -134,35 +134,34 @@ install_dependencies () {
 
 	# Install required packages and dependencies | instalar paquetes y dependencias necesarias.
 	echo -e ""
-	echo -e "${White}Updating and installing required packages and dependencies...${Reset}\n"
-	sudo apt update ; sudo apt full-upgrade -y ; sudo apt install -y ${libs} ${xorg} ${pkgs} --no-install-recommends
-	echo -e ""
+	echo -e "${White}Updating and installing required packages and dependencies...${Reset}"
+	sudo apt update &>/dev/null ; sudo apt full-upgrade -y &>/dev/null ; sudo apt install -y ${libs} ${xorg} ${pkgs} --no-install-recommends &>/dev/null
+	echo -e "${Green}Once done the system was updated and the necessary dependencies were installed.${Reset}\n"
 }
 
 install_bspwm_sxhkd_and_others () {
 
 	# Clone repositories | clonar repositorios.
 	echo -e "${White}Cloning repositories in the current working folder...${Reset}\n"
-	mkdir -p cloning ; cd cloning ; git clone ${bspwm} ; git clone ${sxhkd} ; git clone ${picom} ; git clone ${myrepo}
+	mkdir -p cloning ; cd cloning ; git clone ${bspwm} &>/dev/null ; git clone ${sxhkd} &>/dev/null ; git clone ${picom} &>/dev/null ; git clone ${myrepo} &>/dev/null
 
 	# Install bspwm with repository | instalar bspwm con el repositorio.
-	echo -e "${White}Installing bspwm...${Reset}\n"
-	cd bspwm ; make ; sudo make install ; cd ..
+	echo -e "${White}Installing bspwm with the repository...${Reset}"
+	cd bspwm ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
+	echo -e "${Green}bspwm was installed.${Reset}\n"
 
 	# Install sxhkd with repository | instalar sxhkd con el repositorio.
-	echo -e "${White}Installing sxhkd...${Reset}\n"
-	cd sxhkd ; make ; sudo make install ; cd ..
+	echo -e "${White}Installing sxhkd with the repository...${Reset}"
+	cd sxhkd ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
+	echo -e "${Green}sxhkd was installed.${Reset}\n"
 
 	# Install picom with repository | instalar picom con el repositorio.
 	# echo -e "${White}Installing picom...${Reset}\n"
 	# cd picom ; make ; sudo make install ; cd ..
-
-	# Cloning my repo | clonando mi repo nachinepwn.
-	echo -e "${White}Cloning Machinepwn repository...${Reset}\n"
-	git clone ${myrepo} ; cd Machinepwn
 }
 
 # Main routine | rutina principal.
 initial_checks
 welcome
 install_dependencies
+install_bspwm_sxhkd_and_others
