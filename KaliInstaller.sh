@@ -41,7 +41,7 @@ myrepo="https://github.com/Usergh0st/Machinepwn.git"
 
 # List of packages to install | lista de paquetes a instalar.
 libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-keysyms1-dev \
-      libxcb-xinerama0-dev libxcb-shape0-dev libxcb-cursor-dev pkg-config"
+      libxcb-xinerama0-dev libxcb-shape0-dev libxcb-cursor-dev pkg-config libxcb-icccm4-dev"
 
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
@@ -81,13 +81,13 @@ function ctrl_c () {
 	exit 1
 }
 
-# Check if the script is run as root | Comprobar si el script se ejecuta como root.
+# Initial checks function | funcion de comprobaciones iniciales.
 initial_checks () {
 
 	# Get root temporary permissions | obtener permisos temporales de root.
 	reset ; logo ; sudo -v
 
-	# Check if the script is run from HOME directory | comprobar si el script se ejecuta desde el directorio home.	
+	# Check if the script is run from home directory | comprobar si el script se ejecuta desde el directorio home.
 	if [ "${PWD}" != "${HOME}" ]; then
 
 		clear ; logo
@@ -121,7 +121,7 @@ welcome () {
 	clear ; logo
 
 	echo -e "${Cyan}This script will install my desktop environment and this is what it will do:${Reset}\n"
-	echo -e "${White}Download my desktop environment in: ${Green}${HOME}/Machinepwn${Reset}"
+	echo -e "${White}Download my desktop environment in: ${Green}${HOME}/cloning/Machinepwn${Reset}"
 	echo -e "${White}Install required packages and necessary dependencies.${Reset}"
 	echo -e "${White}Backup of possible existing configurations like ${Green}(bspwm, polybar, etc...)${Reset}"
 	echo -e "${White}Install and setup the desktop environment ${Green}(Machinepwn)${Reset}"
@@ -133,7 +133,9 @@ welcome () {
 install_dependencies () {
 
 	# Install required packages and dependencies | instalar paquetes y dependencias necesarias.
-	echo -e ""
+	
+	clear ; logo
+
 	echo -e "${White}Updating and installing required packages and dependencies...${Reset}"
 	sudo apt update &>/dev/null ; sudo apt full-upgrade -y &>/dev/null ; sudo apt install -y ${libs} ${xorg} ${pkgs} --no-install-recommends &>/dev/null
 	echo -e "${Green}Once done the system was updated and the necessary dependencies were installed.${Reset}\n"
@@ -143,21 +145,70 @@ install_bspwm_sxhkd_and_others () {
 
 	# Clone repositories | clonar repositorios.
 	echo -e "${White}Cloning repositories in the current working folder...${Reset}\n"
+
+		# Checks folder exist or no | comprobar si la carpeta existe o no.
+		if [ -f "${HOME}/cloning" ]; then
+			echo -e "${White}The folder ${LightRed}(cloning)${White} already exists in your home directory.${Reset}\n"
+			rm -rf "${HOME}/cloning"
+		fi
+
 	mkdir -p cloning ; cd cloning ; git clone ${bspwm} &>/dev/null ; git clone ${sxhkd} &>/dev/null ; git clone ${picom} &>/dev/null ; git clone ${myrepo} &>/dev/null
 
 	# Install bspwm with repository | instalar bspwm con el repositorio.
 	echo -e "${White}Installing bspwm with the repository...${Reset}"
 	cd bspwm ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
-	echo -e "${Green}bspwm was installed.${Reset}\n"
+	echo -e "${Green}bspwm was installed.${Reset}\n" ; sleep 1.1
 
 	# Install sxhkd with repository | instalar sxhkd con el repositorio.
 	echo -e "${White}Installing sxhkd with the repository...${Reset}"
 	cd sxhkd ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
-	echo -e "${Green}sxhkd was installed.${Reset}\n"
+	echo -e "${Green}sxhkd was installed.${Reset}\n" ; sleep 1.1
 
 	# Install picom with repository | instalar picom con el repositorio.
 	# echo -e "${White}Installing picom...${Reset}\n"
 	# cd picom ; make ; sudo make install ; cd ..
+}
+
+Backup_old_configurations () {
+	# Backup old configurations | hacer backup de las configuraciones antiguas.
+	echo -e "${White}Backing up old configurations...${Reset}\n"
+
+	cd "${HOME}" ; mkdir -p "Backup" ; cd Backup
+
+	if [ -d "${HOME}/.config/bspwm" ]; then
+		mv "${HOME}/.config/bspwm" "${HOME}/Backup/bspwm.bak_$(date +%Y%m%d%H%M%S)"
+		echo -e "${Green}bspwm configuration backed up.${Reset}" ; sleep 1.1
+	else
+		echo -e "${White}No existing bspwm configuration found skipping backup.${Reset}" ; sleep 1.1
+	fi
+
+	if [ -d "${HOME}/.config/sxhkd" ]; then
+		mv "${HOME}/.config/sxhkd" "${HOME}/Backup/sxhkd.bak_$(date +%Y%m%d%H%M%S)"
+		echo -e "${Green}sxhkd configuration backed up.${Reset}" ; sleep 1.1
+	else
+		echo -e "${White}No existing sxhkd configuration found skipping backup.${Reset}" ; sleep 1.1
+	fi
+
+	if [ -d "${HOME}/.config/polybar" ]; then
+		mv "${HOME}/.config/polybar" "${HOME}/Backup/polybar.bak_$(date +%Y%m%d%H%M%S)"
+		echo -e "${Green}polybar configuration backed up.${Reset}" ; sleep 1.1
+	else
+		echo -e "${White}No existing polybar configuration found skipping backup.${Reset}" ; sleep 1.1
+	fi
+
+	if [ -d "${HOME}/.config/alacritty" ]; then
+		mv "${HOME}/.config/alacritty" "${HOME}/Backup/alacritty.bak_$(date +%Y%m%d%H%M%S)"
+		echo -e "${Green}alacritty configuration backed up.${Reset}" ; sleep 1.1
+	else
+		echo -e "${White}No existing alacritty configuration found skipping backup.${Reset}" ; sleep 1.1
+	fi
+
+	if [ -d "${HOME}/.config/picom" ]; then
+		mv "${HOME}/.config/picom" "${HOME}/Backup/picom.bak_$(date +%Y%m%d%H%M%S)"
+		echo -e "${Green}picom configuration backed up.${Reset}" ; sleep 1.1
+	else
+		echo -e "${White}No existing picom configuration found skipping backup.${Reset}" ; sleep 1.1
+	fi
 }
 
 # Main routine | rutina principal.
@@ -165,3 +216,4 @@ initial_checks
 welcome
 install_dependencies
 install_bspwm_sxhkd_and_others
+Backup_old_configurations
