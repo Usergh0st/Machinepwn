@@ -19,7 +19,7 @@
 # Mail: usergh0stmail@proton.me
 # Last Update: 22.12.2025 8:54 AM
 # Script Version: 1.3
-# Coutings atempt: 5
+# Coutings atempt: 12
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
@@ -126,7 +126,6 @@ initial_checks () {
 # Welcome function | funcion de bienvenida.
 welcome () {
 
-	# Welcome message | mensaje de bienvenida
 	clear ; logo
 
 	echo -e "${Cyan}This script will install my desktop environment and this is what it will do:${Reset}\n"
@@ -146,7 +145,7 @@ install_dependencies () {
 	
 	clear ; logo
 
-	echo -e "${White}Updating and installing required packages and dependencies...${Reset}\n"
+	echo -e "${White}Updating and installing required packages and dependencies...${Reset}\n" ; sleep 2
 	sudo apt update ; sudo apt full-upgrade -y ; sudo apt install -y ${libs} ${xorg} ${pkgs} --no-install-recommends
 
 	clear ; logo
@@ -185,6 +184,9 @@ install_bspwm_sxhkd_and_others () {
 
 # Backup old configurations function | funcion de backup de configuraciones antiguas
 Backup_old_configurations () {
+
+	clear ; logo
+
 	# Backup old configurations | hacer backup de las configuraciones antiguas
 	echo -e "${White}Backing up old configurations...${Reset}\n"
 
@@ -192,51 +194,91 @@ Backup_old_configurations () {
 
 	if [ -d "${HOME}/.config/bspwm" ]; then
 		mv "${HOME}/.config/bspwm" "${HOME}/backup/bspwm.bak_$(date +%Y%m%d%H%M%S)"
-		echo -e "${Green}bspwm configuration backed up.${Reset}" ; sleep 1.1
+		echo -e "${Green}bspwm folder configuration backed up.${Reset}" ; sleep 1.1
 	else
 		echo -e "${White}No existing bspwm configuration found skipping backup.${Reset}" ; sleep 1.1
 	fi
 
 	if [ -d "${HOME}/.config/sxhkd" ]; then
 		mv "${HOME}/.config/sxhkd" "${HOME}/backup/sxhkd.bak_$(date +%Y%m%d%H%M%S)"
-		echo -e "${Green}sxhkd configuration backed up.${Reset}" ; sleep 1.1
+		echo -e "${Green}sxhkd folder configuration backed up.${Reset}" ; sleep 1.1
 	else
 		echo -e "${White}No existing sxhkd configuration found skipping backup.${Reset}" ; sleep 1.1
 	fi
 
 	if [ -d "${HOME}/.config/polybar" ]; then
 		mv "${HOME}/.config/polybar" "${HOME}/backup/polybar.bak_$(date +%Y%m%d%H%M%S)"
-		echo -e "${Green}polybar configuration backed up.${Reset}" ; sleep 1.1
+		echo -e "${Green}polybar folder configuration backed up.${Reset}" ; sleep 1.1
 	else
 		echo -e "${White}No existing polybar configuration found skipping backup.${Reset}" ; sleep 1.1
 	fi
 
 	if [ -d "${HOME}/.config/alacritty" ]; then
 		mv "${HOME}/.config/alacritty" "${HOME}/backup/alacritty.bak_$(date +%Y%m%d%H%M%S)"
-		echo -e "${Green}alacritty configuration backed up.${Reset}" ; sleep 1.1
+		echo -e "${Green}alacritty folder configuration backed up.${Reset}" ; sleep 1.1
 	else
 		echo -e "${White}No existing alacritty configuration found skipping backup.${Reset}" ; sleep 1.1
 	fi
 
 	if [ -d "${HOME}/.config/picom" ]; then
 		mv "${HOME}/.config/picom" "${HOME}/backup/picom.bak_$(date +%Y%m%d%H%M%S)"
-		echo -e "${Green}picom configuration backed up.${Reset}" ; sleep 1.1
+		echo -e "${Green}picom folder configuration backed up.${Reset}\n" ; sleep 1.1
 	else
-		echo -e "${White}No existing picom configuration found skipping backup.${Reset}" ; sleep 1.1
+		echo -e "${White}No existing picom configuration found skipping backup.${Reset}\n" ; sleep 1.1
 	fi
+}
+
+# Change the default shell to zsh | cambiar la shell por defecto a zsh
+machinepwn_change_default_shell () {
+
+	who_user=$(whoami)
+	zsh_path=$(command -v zsh)
+	echo -e "${White}Changing the shell to zsh for the user ${LightRed}${who_user}... ${Reset}" ; sleep 2
+
+    	if [ -z "${zsh_path}" ]; then
+        	echo -e "${LightRed}The shell zsh is not installed cannot change shell" ; sleep 2
+    	fi
+
+	if [ "${SHELL}" != "${zsh_path}" ]; then
+
+        	echo -e "${White}Changing your shell to zsh please wait" ; sleep 1.1
+
+		if chsh -s "${zsh_path}"; then
+			echo -e "${Green}Okay it switched to zsh by default." ; sleep 1.1
+		else
+			echo -e "${LightRed}Errors occurred while switching shells." ; sleep 1.1
+		fi
+
+	else
+		echo -e "${Green}Zsh is already your default shell." ; sleep 2
+	fi
+}
+
+# Configure and enable some services
+machinepwn_configure_services () {
+
+	echo -e "${White}Configure and enable some services... ${Reset}" ; sleep 2
+
+	sudo systemctl --user enable --now KaliUpdates.timer &>/dev/null
+	sudo systemctl --user enable --now pulseaudio.service &>/dev/null
+
+	echo -e "${Green}Everything is ready services are enabled.${Reset}" ; sleep 1.2
+
 }
 
 # Install machinepwn configuration files function | funcion de instalacion de archivos de configuracion de machinepwn
 install_machinepwn_configurations () {
+
+	reset ; clear ; logo
 
 	# Copying directories also add permissions | copiando directorios y agregando permisos
 	echo -e "${White}Installing Machinepw configuration please wait...${Reset}" 
 	cd "${HOME}/cloning/Machinepwn/home/.config" ; cp -r * "${HOME}/.config"
 
 	# Copying directory bspwm .config | copiando directorio bspwm .config
-	cd "${HOME}/.config/bspwm/" ; chmod u+x bspwmrc ; chmod u+x sxhkdrc
-	cd "${HOME}/.config/bspwm/src" ; chmod u+x *
-	cd "${HOME}/.config/bspwm/barpwn" ; chmod u+x launch.sh
+	cd "${HOME}/.config/bspwm/" ; chmod +x bspwmrc ; chmod +x sxhkdrc
+	cd "${HOME}/.config/bspwm/src" ; chmod +x *
+	cd "${HOME}/.config/bspwm/barpwn" ; chmod +x launch.sh
 	# cd "${HOME}/.config/bspwm/homebar" ; chmod u+x launch.sh
 	
 	# Copying zsh files and others | copiando archivos zsh y otras cosas
@@ -245,16 +287,28 @@ install_machinepwn_configurations () {
 	cd "${HOME}/cloning/Machinepwn/debian"
 	cp .zshrc "${HOME}"
 
-	# Installing the fonts | instalar las fuentes
-	cd "${HOME}/cloning/Machinepwn/home/"
-	cp -r fonts "${HOME}/.local/share/fonts" ; fc-cache -fv &>/dev/null
+	# Check if the destination folders exist | check if the destination folders exist
+	if [ -d "${HOME}/.local/share" ]; then
+
+		# Installing the fonts | instalar las fuentes
+		cd "${HOME}/cloning/Machinepwn/home/"
+		cp -r fonts "${HOME}/.local/share/fonts" ; fc-cache -fv &>/dev/null
+	else
+
+		# Installing the fonts | instalar las fuentes
+		mkdir -p "${HOME}/.local/share" ; cd "${HOME}/cloning/Machinepwn/home/"
+		cp -r fonts "${HOME}/.local/share/fonts" ; fc-cache -fv &>/dev/null
+	fi
 
 	# Installing others thins | instalar otras cosas.
 	folder="bin" ; mkdir -p "~/.local/${folder}"
 	cd "${HOME}/cloning/Machinepwn/misc" ; cp * "${HOME}/.local/${folder}"
-	chmod u+x * "${HOME}/.local/${folder}"
+	chmod +x * "${HOME}/.local/${folder}"
+
+	# Temporary text for modules updates | texto temporal para el modulo updates
+	echo '55' > "${HOME}/.cache/updates.txt"
 	
-	echo -e "${Green}Machinepwn configuration installed correctly.${Reset}\n" ; sleep 1.1
+	echo -e "${Green}Machinepwn configuration installed correctly.${Reset}\n" ; sleep 3
 }
 
 # Main routine | rutina principal
@@ -264,4 +318,7 @@ welcome
 install_dependencies
 install_bspwm_sxhkd_and_others
 Backup_old_configurations
+machinepwn_change_default_shell
+
+machinepwn_configure_services
 install_machinepwn_configurations
