@@ -94,4 +94,4 @@ First_steps () {
 
 # Calls functions in script.
 Installer_banner
-First_steps    
+First_steps

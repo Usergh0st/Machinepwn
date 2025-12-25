@@ -1,3 +1,3 @@
 #!/bin/sh
-# Simple file to start bspwm.
+# Simple file to start bspwm
 exec bspwm

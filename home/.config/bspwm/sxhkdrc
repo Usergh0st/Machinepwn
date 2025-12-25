@@ -1,14 +1,13 @@
-#               __     __       __            
+# ========================================================
+#               __     __       __
 # .-----.--.--.|  |--.|  |--.--|  |.----.----.
 # |__ --|_   _||     ||    <|  _  ||   _|  __|
 # |_____|__.__||__|__||__|__|_____||__| |____|
-
-#  __           __   __                
+#  __           __   __
 # |  |--.-----.|  |_|  |--.-----.--.--.
 # |     |  _  ||   _|    <|  -__|  |  |
 # |__|__|_____||____|__|__|_____|___  |
 #                               |_____|
-
 # Author: Usergh0st
 # repository: https://github.com/Usergh0st/Machinepwn
 # Mail: usergh0stmail@proton.me
@@ -19,9 +18,10 @@
 
 # Important the keyboard layout has to be.
 # In American English to avoid conflict with the keys.
-# US-English | required: xdotool for decrease/increase
+# US-English | required: xdotool for decrease/increase.
+# ========================================================
 
-# -- [Common keyboard shortcuts] --
+# -- =[Common keyboard shortcuts]= --
 
 # Open the terminal alacritty emulator.
 super + Return
@@ -51,7 +51,7 @@ super + ctrl + q
 super + alt + {s,f,t}
 	bspc node -t {floating,fullscreen,tiled}
 
-# -- [Focus and swap nodes] --
+# -- =[Focus and swap nodes]= --
 
 # Rotate bspwm desktop.
 super + Tab
@@ -77,7 +77,7 @@ super + alt + {Left,Down,Up,Right}
 super + alt + space
 	bspc node -p cancel
 
-# -- [Move and resize nodes bspwm] --
+# -- =[Move and resize nodes bspwm]= --
 
 # Intelligently adjust windows to the available space.
 super + alt + b

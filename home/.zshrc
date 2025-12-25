@@ -1,13 +1,12 @@
-#               __              
+# =============================================================================
+#               __
 # .-----.-----.|  |--.----.----.
 # |-- __|__ --||     |   _|  __|
 # |_____|_____||__|__|__| |____|
-
-#  _______             __    
+#  _______             __
 # |   _   |.----.----.|  |--.
 # |       ||   _|  __||     |
 # |___|___||__| |____||__|__|
-
 
 # Author:	    Usergh0st
 # Repository:       https://github.com/Usergh0st/Machinepwn.git
@@ -16,6 +15,7 @@
 # Edit this file settings to adjust it your way, user hack the world.
 # Depends: eza zsh zsh-syntax-highlighting zsh-autosuggestions aur/scrub
 # 15.12.2025 11:49 AM
+# =============================================================================
 
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
@@ -23,7 +23,7 @@
 # Use software rendering.
 export LIBGL_ALWAYS_SOFTWARE=1
 
-#         __ __                          
+#         __ __
 # .---.-.|  |__|.---.-.-----.-----.-----.
 # |  _  ||  |  ||  _  |__ --|  -__|__ --|
 # |___._||__|__||___._|_____|_____|_____|
@@ -47,7 +47,7 @@ alias pacche="sudo pacman -Scc ; paru -Scc"
 alias dbpacman="sudo rm -rf /var/lib/pacman/db.lck ; sudo pacman -Syu"
 alias btw="fastfetch"
 
-#  __     __         __                    
+#  __     __         __
 # |  |--.|__|.-----.|  |_.-----.----.--.--.
 # |     ||  ||__ --||   _|  _  |   _|  |  |
 # |__|__||__||_____||____|_____|__| |___  |
@@ -69,11 +69,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-#         __               __              
+#         __               __
 # .-----.|  |.--.--.-----.|__|.-----.-----.
 # |  _  ||  ||  |  |  _  ||  ||     |__ --|
 # |   __||__||_____|___  ||__||__|__|_____|
-# |__|             |_____|                 
+# |__|             |_____|
 
 # Plugins to use in the zsh.
 
@@ -81,7 +81,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 
-#  _______                    __   __                    
+#  _______                    __   __
 # |    ___|.--.--.-----.----.|  |_|__|.-----.-----.-----.
 # |    ___||  |  |     |  __||   _|  ||  _  |     |__ --|
 # |___|    |_____|__|__|____||____|__||_____|__|__|_____|
@@ -92,15 +92,15 @@ function rmk () {
 	shred -zun 5 -v $1
 }
 
-#               __                      __   __                    
+#               __                      __   __
 # .-----.-----.|  |--.    .-----.-----.|  |_|__|.-----.-----.-----.
 # |-- __|__ --||     |    |  _  |  _  ||   _|  ||  _  |     |__ --|
 # |_____|_____||__|__|    |_____|   __||____|__||_____|__|__|_____|
-#                               |__|                               
+#                               |__|
 
-setopt AUTOCD              
-setopt PROMPT_SUBST        
-setopt MENU_COMPLETE      
-setopt LIST_PACKED		  
-setopt AUTO_LIST           
+setopt AUTOCD
+setopt PROMPT_SUBST
+setopt MENU_COMPLETE
+setopt LIST_PACKED
+setopt AUTO_LIST
 setopt COMPLETE_IN_WORD

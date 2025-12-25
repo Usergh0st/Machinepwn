@@ -11,22 +11,22 @@
 
 # Description: Kali Linux installer script for machinepwn desktop environment.
 # 	       The installer script for machinepwn, for kali linux and debian based.
-# 	       Only kali linux/debian! avaliable installacion no others distros.
+# 	       Only kali linux/debian avaliable installacion no others distros.
 # 	       This script required root user passworld.
 
 # Author: Enríque González Aka (Usergh0st)
-# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Repository: [https://github.com/Usergh0st/Machinepwn.git]
 # Mail: usergh0stmail@proton.me
-# Last Update: 22.12.2025 8:54 AM
+# Last Update: 24.12.2025 01:39 PM
 # Script Version: 1.3
-# Coutings atempt: 12
+# Coutings atempt: 15
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
 # Licensed under GPL-3.0 license
 # ==========================================================================
 
-# Colors use this script | Colores en el script
+# Colors use this script | colores en el script
 Cyan="\e[1;36m"
 White="\e[1;37m"
 Blue="\e[1;34m"
@@ -39,7 +39,7 @@ Bold="\e[1m"
 bspwm="https://github.com/baskerville/bspwm.git"
 sxhkd="https://github.com/baskerville/sxhkd.git"
 picom="https://github.com/yshui/picom.git"
-myrepo="https://github.com/Usergh0st/Machinepwn.git"
+repo_url="https://github.com/Usergh0st/Machinepwn.git"
 
 # List of packages to install | lista de paquetes a instalar
 libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-keysyms1-dev \
@@ -47,7 +47,7 @@ libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-de
 
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
-pkgs="polybar rofi alacritty nitrogen zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol \
+pkgs="polybar rofi alacritty zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol \
      fastfetch papirus-icon-theme adwaita-icon-theme bat firefox-esr openvpn bleachbit mousepad feh"
 
 # Logo function | funcion del logo
@@ -92,10 +92,10 @@ function ctrl_c () {
 # Initial checks function | funcion de comprobaciones iniciales
 initial_checks () {
 
-	# Get root temporary permissions | obtener permisos temporales de root.
+	# Get root temporary permissions | obtener permisos temporales de root
 	reset ; logo ; sudo -v
 
-	# Check if the script is run from home directory | comprobar si el script se ejecuta desde el directorio home.
+	# Check if the script is run from home directory | comprobar si el script se ejecuta desde el directorio home
 	if [ "${PWD}" != "${HOME}" ]; then
 
 		clear ; logo
@@ -107,7 +107,7 @@ initial_checks () {
 		exit 1
 	fi
 
-	# Check linux distro avalible kali linux/debian) | comprobar distro de linux valido kali o debian.
+	# Check linux distro avalible (kali linux/debian) | comprobar distro de linux valido kali o debian
 	if [ -f /etc/os-release ]; then
 		. /etc/os-release
 		if [ "$ID" != "kali" ] && [ "$ID" != "debian" ]; then
@@ -123,7 +123,7 @@ initial_checks () {
 	fi
 }
 
-# Welcome function | funcion de bienvenida.
+# Welcome function | funcion de bienvenida
 welcome () {
 
 	clear ; logo
@@ -165,21 +165,34 @@ install_bspwm_sxhkd_and_others () {
 			rm -rf "${HOME}/cloning"
 		fi
 
-	mkdir -p cloning ; cd "cloning" ; git clone --depth 1 --no-tags ${bspwm} &>/dev/null ; git clone --depth 1 --no-tags ${sxhkd} &>/dev/null ; git clone --depth 1 --no-tags ${picom} &>/dev/null ; git clone --depth 1 --no-tags ${myrepo} &>/dev/null
+	mkdir -p cloning ; cd "cloning" ; git clone --depth 1 --no-tags ${bspwm} &>/dev/null ; git clone --depth 1 --no-tags ${sxhkd} &>/dev/null ; git clone --depth 1 --no-tags ${picom} &>/dev/null ; git clone --depth 1 --no-tags ${repo_url} &>/dev/null
 
-	# Install bspwm with repository | instalar bspwm con el repositorio.
-	echo -e "${White}Installing bspwm with the repository...${Reset}"
-	cd bspwm ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
-	echo -e "${Green}bspwm was installed.${Reset}\n" ; sleep 1.1
 
-	# Install sxhkd with repository | instalar sxhkd con el repositorio.
-	echo -e "${White}Installing sxhkd with the repository...${Reset}"
-	cd sxhkd ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
-	echo -e "${Green}sxhkd was installed.${Reset}\n" ; sleep 1.1
+	if which bspwm &>/dev/null; then
+		echo -e "${Green}The bspwm is already installed on your system.${Reset}"
+	else
+		# Install bspwm with repository | instalar bspwm con el repositorio
+		echo -e "${White}Installing bspwm with the repository...${Reset}"
+		cd bspwm ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
+		echo -e "${Green}bspwm was installed.${Reset}\n" ; sleep 1.1
+	fi
 
-	# Install picom with repository | instalar picom con el repositorio.
-	# echo -e "${White}Installing picom...${Reset}\n"
-	# cd picom ; make ; sudo make install ; cd ..
+	if which sxhkd &>/dev/null; then
+		echo -e "${Green}The sxhkd is already installed on your system.${Reset}"
+	else
+		# Install sxhkd with repository | instalar sxhkd con el repositorio
+		echo -e "${White}Installing sxhkd with the repository...${Reset}"
+		cd sxhkd ; make &>/dev/null ; sudo make install &>/dev/null ; cd ..
+		echo -e "${Green}sxhkd was installed.${Reset}\n" ; sleep 1.1
+	fi
+
+	#if command -v picom; then
+	#	echo -e "${White}The picom compositor is already installed on your system."
+	#else
+		# Install picom with repository | instalar picom con el repositorio.
+		# echo -e "${White}Installing picom...${Reset}\n"
+		# cd picom ; make ; sudo make install ; cd ..
+	#fi
 }
 
 # Backup old configurations function | funcion de backup de configuraciones antiguas
@@ -224,43 +237,54 @@ Backup_old_configurations () {
 		mv "${HOME}/.config/picom" "${HOME}/backup/picom.bak_$(date +%Y%m%d%H%M%S)"
 		echo -e "${Green}picom folder configuration backed up.${Reset}\n" ; sleep 1.1
 	else
-		echo -e "${White}No existing picom configuration found skipping backup.${Reset}\n" ; sleep 1.1
+		echo -e "${White}No existing picom configuration found skipping backup.${Reset}" ; sleep 1.1
+	fi
+
+	if [ -f "${HOME}/.zshrc" ]; then
+		mv "${HOME}/.zshrc" "${HOME}/backup/zshrc.bak_$(date +%Y%m%d%H%M%S)"
+		echo -e "${Green}.zshrc file configuration backed up.${Reset}\n" ; sleep 1.1
+	else
+		echo -e "${White}No existing .zshrc file configuration found skipping backup.${Reset}\n" ; sleep 1.1
 	fi
 }
 
 # Change the default shell to zsh | cambiar la shell por defecto a zsh
 machinepwn_change_default_shell () {
 
+	clear ; logo
+
 	who_user=$(whoami)
 	zsh_path=$(command -v zsh)
-	echo -e "${White}Changing the shell to zsh for the user ${LightRed}${who_user}... ${Reset}" ; sleep 2
+	echo -e "${White}Changing the shell to zsh for the user ${LightRed}${who_user}...${Reset}" ; sleep 2
 
     	if [ -z "${zsh_path}" ]; then
-        	echo -e "${LightRed}The shell zsh is not installed cannot change shell" ; sleep 2
+        	echo -e "${LightRed}The shell zsh is not installed cannot change shell.${Reset}" ; sleep 2
     	fi
 
 	if [ "${SHELL}" != "${zsh_path}" ]; then
 
-        	echo -e "${White}Changing your shell to zsh please wait" ; sleep 1.1
+        	echo -e "${White}Changing your shell to zsh please wait${Reset}\n" ; sleep 1.1
 
 		if chsh -s "${zsh_path}"; then
-			echo -e "${Green}Okay it switched to zsh by default." ; sleep 1.1
+			echo -e "${Green}Okay it switched to zsh by default.${Reset}" ; sleep 1.1
 		else
-			echo -e "${LightRed}Errors occurred while switching shells." ; sleep 1.1
+			echo -e "${LightRed}Errors occurred while switching shells.${Reset}" ; sleep 1.1
 		fi
 
 	else
-		echo -e "${Green}Zsh is already your default shell." ; sleep 2
+		echo -e "${Green}Zsh is already your default shell.${Reset}" ; sleep 2
 	fi
 }
 
-# Configure and enable some services
+# Configure and enable some services | confugurando y habilitando algunos servicios
 machinepwn_configure_services () {
 
-	echo -e "${White}Configure and enable some services... ${Reset}" ; sleep 2
+	clear ; logo
 
-	sudo systemctl --user enable --now KaliUpdates.timer &>/dev/null
-	sudo systemctl --user enable --now pulseaudio.service &>/dev/null
+	echo -e "${White}Configure and enable some services...${Reset}" ; sleep 2
+
+	#sudo systemctl --user enable --now KaliUpdates.timer &>/dev/null
+	#sudo systemctl --user enable --now pulseaudio.service &>/dev/null
 
 	echo -e "${Green}Everything is ready services are enabled.${Reset}" ; sleep 1.2
 
@@ -272,10 +296,10 @@ install_machinepwn_configurations () {
 	reset ; clear ; logo
 
 	# Copying directories also add permissions | copiando directorios y agregando permisos
-	echo -e "${White}Installing Machinepw configuration please wait...${Reset}" 
+	echo -e "${White}Installing machinepwn configuration please wait...${Reset}" 
 	cd "${HOME}/cloning/Machinepwn/home/.config" ; cp -r * "${HOME}/.config"
 
-	# Copying directory bspwm .config | copiando directorio bspwm .config
+	# Add permissions files | agregando permisos a los archivos
 	cd "${HOME}/.config/bspwm/" ; chmod +x bspwmrc ; chmod +x sxhkdrc
 	cd "${HOME}/.config/bspwm/src" ; chmod +x *
 	cd "${HOME}/.config/bspwm/barpwn" ; chmod +x launch.sh
@@ -300,7 +324,7 @@ install_machinepwn_configurations () {
 		cp -r fonts "${HOME}/.local/share/fonts" ; fc-cache -fv &>/dev/null
 	fi
 
-	# Installing others thins | instalar otras cosas.
+	# Installing others thins | instalar otras cosas
 	folder="bin" ; mkdir -p "~/.local/${folder}"
 	cd "${HOME}/cloning/Machinepwn/misc" ; cp * "${HOME}/.local/${folder}"
 	chmod +x * "${HOME}/.local/${folder}"
@@ -308,7 +332,7 @@ install_machinepwn_configurations () {
 	# Temporary text for modules updates | texto temporal para el modulo updates
 	echo '55' > "${HOME}/.cache/updates.txt"
 	
-	echo -e "${Green}Machinepwn configuration installed correctly.${Reset}\n" ; sleep 3
+	echo -e "${Green}Machinepwn configuration installed correctly.${Reset}" ; sleep 3
 }
 
 # Main routine | rutina principal
