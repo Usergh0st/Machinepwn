@@ -8,7 +8,7 @@
 # ==========================================================
 
 # Variable feth walls directory.
-wallpapers_directory="~/.config/bspwm/walls"
+wallpapers_directory="${HOME}/.config/bspwm/walls"
 
 # Search for a wallpaper in any format.
 wallpapers=($(find "${wallpapers_directory}" -type f -name "*.png" -o -name "*.jpg" -o -name "*.jpeg"))
