@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # ==========================================================================================
-# Usergh0st
-# File Script: MonitorSetup.sh
+# Author: Usergh0st
+# File: MonitorSetup.sh
 # Description: Dynamic multi-monitor support and configuration for bspwm using xrandr
-# https://github.com/Usergh0st/Machinepwn.git
-# 18.12.2025
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 18.12.2025
 #
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2027-2027 Usergh0st <usergh0stmail@proton.me>

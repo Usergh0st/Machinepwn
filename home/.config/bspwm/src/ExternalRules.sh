@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
-# ==================================================
-# Usergh0st
+#!/bin/sh
+# =========================================================
+# Author: Usergh0st
 # File: ExternalRules.sh
-# https://github.com/Usergh0st/Machinepwn.git
-# 14.12.2025
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 25.12.2025
 # Description: The external rules for bspwm.
-# ==================================================
+# =========================================================

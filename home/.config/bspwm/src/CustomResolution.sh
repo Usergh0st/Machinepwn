@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-# =====================================================
-# Usergh0st
+# ==========================================================================================
+# Author: Usergh0st
 # File: CustomResolution.sh
-# Description: Configure your own monitor resolution. 
-# 	       In case the first one doesn't work.
-# https://github.com/Usergh0st/Machinepwn.git
-# 19.12.2025
-# =====================================================
+# Description: Configure your own monitor resolution, in case the first one doesn't work.
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 19.12.2025
+# =========================================================================================
 
 set -euo pipefail
 

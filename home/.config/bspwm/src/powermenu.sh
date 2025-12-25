@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ==========================================================================
-# Usergh0st
+# Author: Usergh0st
 # File: powermenu.sh
-# https://github.com/Usergh0st/Machinepwn.git
-# 14.12.2025
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 14.12.2025
 # Description: A simple script powermenu, shutdown, restart and much more.
 # ==========================================================================
 

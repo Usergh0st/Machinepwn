@@ -5,14 +5,12 @@
 # |   __ <|__ --|  _  |  |  |  |        |   _|  __|
 # |______/|_____|   __|________|__|__|__|__| |____|
 #               |__|
-# The central configuration file for bspwm largely controls how the environment looks.
+# Description: The central configuration file for bspwm largely controls how the environment looks.
 # Configure this to your liking, dear user.
-# doc -> [ https://wiki.archlinux.org/title/Bspwm_(Espa%C3%B1ol) ]
-
-# Author:	Usergh0st
-# Repository:	https://github.com/Usergh0st/Machinepwn.git
-# Mail:		usergh0stmail@proton.me
-# Last Update:  24.12.2025 4:11 PM
+# Author: Usergh0st
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Mail: usergh0stmail@proton.me
+# Last Update:  25.12.2025 4:11 PM
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
 # ==========================================================================================
@@ -98,4 +96,6 @@ pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
 
 # -- Restore wallpaper with nitrogen --
 # -- Remplaze with script in the future --
-nitrogen --restore
+# -- I made the script but it's very simple --
+# -- I made the script but it's very simple --
+WallSelect.sh

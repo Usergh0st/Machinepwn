@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # ============================================================================
-# Usergh0st
+# Author:Usergh0st
 # File: target.sh
 # Description: Small script that pinpoints the machine that was attacked.
-# 19.12.2025
-# https://github.com/Usergh0st/Machinepwn.git
+# Date: 19.12.2025
+# Repository: https://github.com/Usergh0st/Machinepwn.git
 # ============================================================================
 
 FILE=/tmp/target
