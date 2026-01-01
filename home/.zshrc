@@ -8,13 +8,13 @@
 # |       ||   _|  __||     |
 # |___|___||__| |____||__|__|
 
-# Author:	    Usergh0st
-# Repository:       https://github.com/Usergh0st/Machinepwn.git
-# Mail: 	    usergh0stmail@proton.me
+# Author: Usergh0st
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Mail: usergh0stmail@proton.me
 
 # Edit this file settings to adjust it your way, user hack the world.
 # Depends: eza zsh zsh-syntax-highlighting zsh-autosuggestions aur/scrub
-# 15.12.2025 11:49 AM
+# 31.12.2025 05:49 PM
 # =============================================================================
 
 # If not running interactively, don't do anything.
@@ -27,9 +27,10 @@ export LIBGL_ALWAYS_SOFTWARE=1
 # .---.-.|  |__|.---.-.-----.-----.-----.
 # |  _  ||  |  ||  _  |__ --|  -__|__ --|
 # |___._||__|__||___._|_____|_____|_____|
+# Specific command shortcuts for arch linux basde distros.
 
-# Specific command shortcuts.
-
+alias vi="nvim"
+alias cls="clear"
 alias cacheft="fc-cache -fv"
 alias update="paru -Syu nocombineupgrade"
 alias ping="ping -c 1 8.8.8.8 ; ping -c 1 google.es"
@@ -52,12 +53,11 @@ alias btw="fastfetch"
 # |     ||  ||__ --||   _|  _  |   _|  |  |
 # |__|__||__||_____||____|_____|__| |___  |
 #                                   |_____|
-
 # History of commands used in zsh only 400.
 
 export HISTORY_IGNORE="(sudo su|cat|ll|ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
-HISTFILE=~/.zhistory
+HISTFILE=~/.zsh_history
 HISTSIZE=400
 SAVEHIST=400
 HISTDUP=erase
@@ -74,7 +74,6 @@ setopt hist_find_no_dups
 # |  _  ||  ||  |  |  _  ||  ||     |__ --|
 # |   __||__||_____|___  ||__||__|__|_____|
 # |__|             |_____|
-
 # Plugins to use in the zsh.
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
