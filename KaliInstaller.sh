@@ -307,9 +307,7 @@ install_machinepwn_configurations () {
 	
 	# Copying zsh files and others | copiando archivos zsh y otras cosas
 	cd "${HOME}/cloning/Machinepwn/home/"
-	cp .xinitrc .zprofile "${HOME}"
-	cd "${HOME}/cloning/Machinepwn/debian"
-	cp .zshrc "${HOME}"
+	cp .xinitrc .zprofile .zshrc .p10k.zsh "${HOME}"
 
 	# Check if the destination folders exist | check if the destination folders exist
 	if [ -d "${HOME}/.local/share" ]; then

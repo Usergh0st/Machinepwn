@@ -1,28 +1,28 @@
-### _**Machinepwn** the environment for pentesting without losing elegance_
+### **Machinepwn the environment for pentesting without losing elegance**
 
 A configuration focused on minimalist and clean pentesting and ethical hacking the configuration is mainly focused on use in virtual machines, and essential things for minimal use of disk space and memory, without losing so much aesthetics.
 
-### _What's new in the environment_
+### **What's new in the environment**
 
 If you want to see the latest changes and updates for this environment, you can visit the following changelog. There you will find out about all the changes made.
 
 - [CHANGELOG.md](https://github.com/Usergh0st/Machinepwn/blob/master/CHANGELOG.md)
 
-### _Environment overview_
+### **Environment overview**
 
-Hello dear user here is a preview of how the Machinepwn environment will look after installation.
+Hello dear user here is a preview of how the **Machinepwn** environment will look after installation.
 
-### _Keyboard shortcuts_
+### **Keyboard shortcuts**
 
 Under construction.
 
-### _Installation_
+### **Installation**
 
 To install this environment, run the following commands below and read the warnings.
 
 ```bash
 # Download the installer in your home directory.
-curl -LO https://raw.githubusercontent.com/Usergh0st/Machinepwn/refs/heads/master/KaliInstaller.sh
+curl -LO https://usergh0st.github.io/Machinepwn/KaliInstaller.sh
 
 # Give it execution permissions and run the installer.
 chmod +x KaliInstaller.sh ; ./KaliInstaller.sh
@@ -32,7 +32,7 @@ chmod +x KaliInstaller.sh ; ./KaliInstaller.sh
 
 ```bash
 # Download the installer in your home directory.
-curl -LO https://raw.githubusercontent.com/Usergh0st/Machinepwn/refs/heads/master/ArchInstaller.sh
+curl -LO https://usergh0st.github.io/Machinepwn/ArchInstaller.sh
 
 # Give it execution permissions and run the installer.
 chmod +x ArchInstaller.sh ; ./ArchInstaller.sh
