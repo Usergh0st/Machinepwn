@@ -40,6 +40,9 @@ bspwm="https://github.com/baskerville/bspwm.git"
 sxhkd="https://github.com/baskerville/sxhkd.git"
 picom="https://github.com/yshui/picom.git"
 repo_url="https://github.com/Usergh0st/Machinepwn.git"
+powerlevel10k="https://github.com/romkatv/powerlevel10k.git"
+fzftabgit="https://github.com/Aloxaf/fzf-tab.git"
+zsh_sudo="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/plugins/sudo/sudo.plugin.zsh"
 
 # List of packages to install | lista de paquetes a instalar
 libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-keysyms1-dev \
@@ -48,7 +51,7 @@ libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-de
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
 pkgs="polybar rofi alacritty zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol \
-     fastfetch papirus-icon-theme adwaita-icon-theme bat firefox-esr openvpn bleachbit mousepad feh"
+     fastfetch papirus-icon-theme adwaita-icon-theme bat firefox-esr openvpn bleachbit mousepad feh eza"
 
 # Logo function | funcion del logo
 logo () {
@@ -167,8 +170,9 @@ install_bspwm_sxhkd_and_others () {
 
 	mkdir -p cloning ; cd "cloning" ; git clone --depth 1 --no-tags ${bspwm} &>/dev/null ; git clone --depth 1 --no-tags ${sxhkd} &>/dev/null ; git clone --depth 1 --no-tags ${picom} &>/dev/null ; git clone --depth 1 --no-tags ${repo_url} &>/dev/null
 
+	sudo git clone --depth 1 --no-tags ${powerlevel10k} /usr/share/zsh-theme-powerlevel10k &>/dev/null ; sudo git clone --depth 1 --no-tags ${fzftabgit} /usr/share/fzf-tab-git &>/dev/null
 
-	if which bspwm &>/dev/null; then
+	if command -v bspwm &>/dev/null; then
 		echo -e "${Green}The bspwm is already installed on your system.${Reset}"
 	else
 		# Install bspwm with repository | instalar bspwm con el repositorio
@@ -177,7 +181,7 @@ install_bspwm_sxhkd_and_others () {
 		echo -e "${Green}bspwm was installed.${Reset}\n" ; sleep 1.1
 	fi
 
-	if which sxhkd &>/dev/null; then
+	if command -v sxhkd &>/dev/null; then
 		echo -e "${Green}The sxhkd is already installed on your system.${Reset}"
 	else
 		# Install sxhkd with repository | instalar sxhkd con el repositorio
@@ -296,7 +300,7 @@ install_machinepwn_configurations () {
 	reset ; clear ; logo
 
 	# Copying directories also add permissions | copiando directorios y agregando permisos
-	echo -e "${White}Installing machinepwn configuration please wait...${Reset}" 
+	echo -e "${White}Installing machinepwn configuration please wait...${Reset}"
 	cd "${HOME}/cloning/Machinepwn/home/.config" ; cp -r * "${HOME}/.config"
 
 	# Add permissions files | agregando permisos a los archivos
@@ -329,8 +333,39 @@ install_machinepwn_configurations () {
 
 	# Temporary text for modules updates | texto temporal para el modulo updates
 	echo '55' > "${HOME}/.cache/updates.txt"
+
+	# Installing zsh sudo plugin | instalar el plugin sudo zshrc
+	sudo mkdir -p "/usr/share/zsh-sudo" ; cd "/usr/share/zsh-sudo"
+
+	if command -v wget &>/dev/null; then
+		sudo wget ${zsh_sudo} &>/dev/null
+	elif command -v curl &>/dev/null; then
+		sudo curl -LO ${zsh_sudo} &>/dev/null
+	else
+		echo -e "${LightRed}Error: Curl or wget binaries not found.${Reset}" ; sleep 3
+	fi
+
+	echo -e "${Green}Machinepwn configuration installed correctly.${Reset}\n" ; sleep 3
+}
+
+machinepwn_final_steps () {
+	echo -e "${White}Deleting cloning folder and clean apt...${Reset}" ; sleep 2
 	
-	echo -e "${Green}Machinepwn configuration installed correctly.${Reset}" ; sleep 3
+	sudo rm -rf ${HOME}/cloning
+	sudo apt autoremove --purge &>/dev/null
+
+	echo -e "${Green}Almost everything is ready.${Reset}\n"
+	echo -ne "${White}Do you want to restart the system? ${LightRed}(y/n) ${Green}"
+	read choice
+
+	if [ ${choice} == "y" ]; then
+		echo -e "${Green}Restarting the system...${Reset}" ; sleep 3
+		sudo systemctl reboot
+	else
+		echo -e "${LightRed}Aborting restart....${Reset}" ; sleep 3
+		echo -e "${LightRed}Exiting the script goodbye!${Reset}" ; sleep 3
+		exit 0
+	fi
 }
 
 # Main routine | rutina principal
@@ -344,3 +379,4 @@ machinepwn_change_default_shell
 
 machinepwn_configure_services
 install_machinepwn_configurations
+machinepwn_final_steps
