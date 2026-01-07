@@ -1,4 +1,7 @@
-### **Machinepwn the environment for pentesting without losing elegance**
+|<img width="1431" height="607" alt="Image" src="https://github.com/user-attachments/assets/61b31b42-42b9-4760-b26a-e89c8ac6e734" />|
+|---|
+
+## **Machinepwn the environment for pentesting without losing elegance**
 
 A configuration focused on minimalist and clean pentesting and ethical hacking the configuration is mainly focused on use in virtual machines, and essential things for minimal use of disk space and memory, without losing so much aesthetics.
 
