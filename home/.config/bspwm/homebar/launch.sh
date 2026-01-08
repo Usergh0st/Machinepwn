@@ -2,7 +2,7 @@
 #  _____                           __    
 # |     |_.---.-.--.--.-----.----.|  |--.
 # |       |  _  |  |  |     |  __||     |
-# |_______|___._|_____|__|__|____||__|__|                                  
+# |_______|___._|_____|__|__|____||__|__|                                       
 # File to propouse launch the polybar.
 # Terminate already running bar instances.
 # If all your bars have ipc enabled you can use:
@@ -11,5 +11,5 @@
 # Otherwise you can use the nuclear option.
 # Launch the polybar BarPwn.
 
-killall -q polybar ; killall -q barpwn ; pidof -q barpwn || { polybar -q barpwn -c "${HOME}"/.config/bspwm/barpwn/config.ini & }
-echo "The polybar barpwn has launched..."
+killall -q polybar ; killall -q homebar ; pidof -q homebar || { polybar -q homebar -c "${HOME}"/.config/bspwm/homebar/config.ini & }
+echo "The polybar homebar has launched..."
