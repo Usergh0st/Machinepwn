@@ -22,19 +22,19 @@
 
 The following will show how the pitching styles and other things turned out.
 
-- ![prew-powermenu](https://github.com/Usergh0st/Machinepwn/blob/master/previews/powermenu.png?raw=true)
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/1c326e29-1350-4676-aaa7-f6b12ff9a844" />
 
 The power menu lets you perform these actions quickly.
 
-- ![prew-style](https://github.com/Usergh0st/Machinepwn/blob/master/previews/style-2.png?raw=true)
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/65d8f58c-81d1-43e5-aacf-d739b6cba32b" />
 
 New style 2 application launcher.
 
-- ![prew-style](https://github.com/Usergh0st/Machinepwn/blob/master/previews/style-3.png?raw=true)
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/2f0e018a-0e37-4ddf-adbf-659d5fd0bf74" />
 
 New style 3 application launcher.
 
-- ![prew-lookfinal](https://github.com/Usergh0st/Machinepwn/blob/master/previews/finallook.png?raw=true)
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/cdb51b78-d11c-405e-b0c6-64042ff9b328" />
 
 Finally, a final look at how it's coming along; better things are coming.
 
@@ -70,11 +70,11 @@ Finally, a final look at how it's coming along; better things are coming.
 
 A preview of how the desktop environment is looking.
 
-- ![prew-machinepwn](https://github.com/Usergh0st/Machinepwn/blob/master/previews/Machinepwn.png?raw=true)
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/1221b07a-9fee-4db7-9506-2fc5622072d4" />
 
 New rofi launcher apps.
 
-- ![prew-launccher](https://github.com/Usergh0st/Machinepwn/blob/master/previews/launcher.png?raw=true)
+- <img width="758" height="411" alt="Image" src="https://github.com/user-attachments/assets/a9b4bce4-a219-4999-9725-0598ec4fbc92" />
 
 ### To-Do
 
@@ -101,7 +101,7 @@ New rofi launcher apps.
 
 A preview of how the desktop environment is looking
 
-- ![prew-polybar](https://github.com/Usergh0st/Machinepwn/blob/master/previews/barpwn.png?raw=true)
+- <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/37ac8a9a-4cbb-4c9f-80cb-daa4c1079703" />
 
 ### To-Do
 
