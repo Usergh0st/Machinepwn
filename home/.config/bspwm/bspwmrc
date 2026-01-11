@@ -88,8 +88,8 @@ wmname LG3D &>/dev/null &
 vmware-user-suid-wrapper &>/dev/null &
 
 # -- Launch The Polybars BarPwn And HomeBar --
-# ~/.config/bspwm/homebar/launch.sh &
-~/.config/bspwm/barpwn/launch.sh &
+# ~/.config/bspwm/polybar/homebar/launch.sh &
+~/.config/bspwm/polybar/barpwn/launch.sh &
 
 # -- Start sxhkd daemon hotkey --
 pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }

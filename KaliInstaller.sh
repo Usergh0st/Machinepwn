@@ -17,7 +17,7 @@
 # Author: Enríque González Aka (Usergh0st)
 # Repository: [https://github.com/Usergh0st/Machinepwn.git]
 # Mail: usergh0stmail@proton.me
-# Last Update: 24.12.2025 01:39 PM
+# Last Update: 10.01.2026 11:11 PM
 # Script Version: 1.3
 # Coutings atempt: 15
 
@@ -50,7 +50,7 @@ libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-de
 
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
-pkgs="polybar rofi alacritty zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol \
+pkgs="polybar rofi alacritty zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol fzf \
      fastfetch papirus-icon-theme adwaita-icon-theme bat firefox-esr openvpn bleachbit mousepad feh eza"
 
 # Logo function | funcion del logo
@@ -306,8 +306,8 @@ install_machinepwn_configurations () {
 	# Add permissions files | agregando permisos a los archivos
 	cd "${HOME}/.config/bspwm/" ; chmod +x bspwmrc ; chmod +x sxhkdrc
 	cd "${HOME}/.config/bspwm/src" ; chmod +x *
-	cd "${HOME}/.config/bspwm/barpwn" ; chmod +x launch.sh
-	# cd "${HOME}/.config/bspwm/homebar" ; chmod u+x launch.sh
+	cd "${HOME}/.config/bspwm/polybar/barpwn" ; chmod +x launch.sh
+	cd "${HOME}/.config/bspwm/polybar/homebar" ; chmod +x launch.sh
 	
 	# Copying zsh files and others | copiando archivos zsh y otras cosas
 	cd "${HOME}/cloning/Machinepwn/home/"
