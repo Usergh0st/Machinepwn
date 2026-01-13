@@ -2,9 +2,9 @@
 # =========================================================
 # Author: Usergh0st
 # File: Resize.sh
-# Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 14.12.2025
 # Description: A simple script to resize the windows.
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 12.01.2026
 # =========================================================
 
 if bspc query -N -n focused.floating > /dev/null; then

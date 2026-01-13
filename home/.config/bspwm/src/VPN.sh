@@ -2,9 +2,9 @@
 # ======================================================
 # Author: Usergh0st
 # File: VPN.sh
-# Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 25.12.2025
 # Description: A simple script to show vpn conected.
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 12.01.2026
 # ======================================================
 
 if ip link show tun0 &>/dev/null; then

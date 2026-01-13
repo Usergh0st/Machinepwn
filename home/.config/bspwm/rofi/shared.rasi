@@ -4,7 +4,7 @@
 	font: "Cascadia Code 9";
 	background: #0f0f0f;
 	bg-alt: #0f0f0f;
-	background-alt: #4A201F; 
+	background-alt: #4A201F;
 	foreground: #cd9191;
 	selected: #382123;
 	active: #261314;

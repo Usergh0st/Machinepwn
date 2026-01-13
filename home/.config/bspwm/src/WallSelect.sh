@@ -3,8 +3,8 @@
 # Author: Usergh0st
 # File: WallSelect.sh
 # Description: Simple script that sets a wallpaper.
-# Date: 25.12.2025
 # Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 12.01.2026
 # ==========================================================
 
 # Variable feth walls directory.

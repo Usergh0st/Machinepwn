@@ -2,7 +2,53 @@
 # =========================================================
 # Author: Usergh0st
 # File: ExternalRules.sh
-# Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 25.12.2025
 # Description: The external rules for bspwm.
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 12.01.2026
 # =========================================================
+
+wid=$1
+class=$2
+instance=$3
+consequences=$4
+
+result () {
+	eval "${consequences}"
+	[ "${state}" ] || echo "$1"
+}
+
+case "${class}" in
+	pavucontrol)
+		result "state=floating focus=on follow=on sticky=on rectangle=422x400+1490+33"
+		;;
+	font-manager)
+		result "state=floating focus=on center=on"
+		;;
+	font-viewer)	
+		result "state=floating focus=on center=on"
+		;;
+	Bleachbit)
+		result "state=floating focus=on center=on"
+		;;
+	stacer)
+		result "state=floating focus=on center=on"
+		;;
+	SimpleScreenRecorder)
+		result "state=floating focus=on center=on"
+		;;
+	mpv)
+		result "state=floating focus=on center=on"
+		;;
+	Thunar)
+		result "state=floating focus=on center=on"
+		;;
+	Virt-manager)
+		result "state=floating focus=on center=on"
+		;;
+	obsidian)
+		result "state=floating focus=on center=on"
+		;;
+	firefox-esr)
+		result "focus=on follow=on"
+		;;
+esac

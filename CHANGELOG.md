@@ -47,6 +47,13 @@ Finally, an overview of what the terminal looks like with powerlevel10k fzf and 
 
 - ![terminal](https://github.com/user-attachments/assets/2a178198-2ef6-403a-bcb9-e9894d13c324)
 
+### To-Do
+
+- Configure the Picom Transparency manager.
+- Create a better script for selecting wallpapers.
+- Create more conceptual menus for rofi.
+- Configure the bspwm external rules.
+
 ## Adding more things and making some changes.
 
 ##### Wednesday 17 December 2025
@@ -87,9 +94,9 @@ New style 3 application launcher.
 
 Finally, a final look at how it's coming along; better things are coming.
 
-## To-Do
+### To-Do
 
-- Create rofi powermenu applet and others. 
+- Create rofi powermenu applet and others.
 - Configure the Picom Transparency manager.
 - Create script for the updates module polybar.
 - Create script for wallpapers selector.

@@ -2,12 +2,12 @@
 
 configuration {
 
-	modi: 						"drun";
-	icon-theme: 				"Papirus-Dark";
-	application-fallback-icon: 	"Adwaita";
+    modi:                       "drun";
+    icon-theme:                 "Papirus-Dark";
+    application-fallback-icon:  "Adwaita";
     show-icons:                 true;
-	drun-display-format:        "{name}";
-	disable-history:            true;
+    drun-display-format:        "{name}";
+    disable-history:            true;
 
 }
 
@@ -80,7 +80,7 @@ listview {
 
     enabled:                     true;
     columns:                     3;
-    lines:			 6;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

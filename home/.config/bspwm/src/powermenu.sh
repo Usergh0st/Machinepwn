@@ -2,9 +2,9 @@
 # ==========================================================================
 # Author: Usergh0st
 # File: powermenu.sh
-# Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 14.12.2025
 # Description: A simple script powermenu, shutdown, restart and much more.
+# Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 12.01.2026
 # ==========================================================================
 
 # Enable strict mode.

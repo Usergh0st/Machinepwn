@@ -109,7 +109,7 @@ setopt hist_find_no_dups
 #             |_____|
 # Load some themes, settings, and other things.
 
-autoload -U compinit ; compinit
+autoload -Uz compinit ; compinit
 local zcompdump="${HOME}/.config/zsh/zcompdump"
 
 autoload -Uz add-zsh-hook

@@ -51,7 +51,7 @@ mainbox {
 
 }
 
-// # Inputbar 
+// # Inputbar
 
 inputbar {
 
@@ -76,7 +76,7 @@ dummy {
 
 textbox-prompt-colon {
 
-    font: 			 "Material Desing Icons Desktop 12";
+    font:                        "Material Desing Icons Desktop 12";
     enabled:                     true;
     expand:                      false;
     str:                         "󰌪";
@@ -97,7 +97,7 @@ prompt {
 
 }
 
-// # Message 
+// # Message
 
 message {
 
@@ -149,7 +149,7 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     15px;
     margin:                      0px;
     padding:                     0px;

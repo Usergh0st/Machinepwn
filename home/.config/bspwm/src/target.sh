@@ -3,8 +3,8 @@
 # Author:Usergh0st
 # File: target.sh
 # Description: Small script that pinpoints the machine that was attacked.
-# Date: 19.12.2025
 # Repository: https://github.com/Usergh0st/Machinepwn.git
+# Date: 12.01.2026
 # ============================================================================
 
 FILE=/tmp/target

@@ -33,14 +33,14 @@
     os_icon                 # os identifier
     user                    # user identifier
     dir                     # current directory
+    php_version             # PHP version
+    status                  # Status with things
+    yazi                    # Yazi file manager
+    command_execution_time  # Execution time commands
+    background_jobs         # background_jobs
     vcs                     # git status
+    context                 # Context of commands
     prompt_char             # prompt symbol
-    php_version
-    status
-    yazi
-    command_execution_time
-    background_jobs
-    context
   )
 
   # The list of segments shown on the right. Fill it with less important segments.

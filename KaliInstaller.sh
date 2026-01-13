@@ -10,16 +10,16 @@
 # |_______||__|__|_____||____|___._||__|__||_____|__|
 
 # Description: Kali Linux installer script for machinepwn desktop environment.
-# 	       The installer script for machinepwn, for kali linux and debian based.
-# 	       Only kali linux/debian avaliable installacion no others distros.
-# 	       This script required root user passworld.
+# The installer script for machinepwn, for kali linux and debian based.
+# Only kali linux/debian avaliable installacion no others distros.
+# This script required root user passworld.
 
 # Author: Enríque González Aka (Usergh0st)
-# Repository: [https://github.com/Usergh0st/Machinepwn.git]
+# Repository: https://github.com/Usergh0st/Machinepwn.git
 # Mail: usergh0stmail@proton.me
-# Last Update: 10.01.2026 11:11 PM
+# Last Update: 12.01.2026 09:11 PM
 # Script Version: 1.3
-# Coutings atempt: 15
+# Coutings atempt: 22
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>

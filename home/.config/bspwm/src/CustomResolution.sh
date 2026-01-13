@@ -4,7 +4,7 @@
 # File: CustomResolution.sh
 # Description: Configure your own monitor resolution, in case the first one doesn't work.
 # Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 19.12.2025
+# Date: 12.01.2026
 # =========================================================================================
 
 set -euo pipefail
