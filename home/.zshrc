@@ -19,7 +19,7 @@
 # Edit this file settings to adjust it your way, user hack the world.
 # Depends: eza zsh zsh-syntax-highlighting zsh-autosuggestions aur/scrub
 # batcat fzf powerlevel10k sudo_plugin xclip.
-# Date: 02.01.2026 12:49 PM
+# Date: 14.01.2026 09:18 AM
 # Tested: Kali/Arch
 # =============================================================================
 
@@ -111,7 +111,12 @@ setopt hist_find_no_dups
 
 autoload -Uz compinit
 
-local zcompdump="${HOME}/.config/zsh/zcompdump"
+if [ -d "${HOME}/.config/zsh" ]; then
+    local zcompdump="${HOME}/.config/zsh/zcompdump"
+else
+    mkdir -p "${HOME}/.config/zsh"
+    local zcompdump="${HOME}/.config/zsh/zcompdump"
+fi
 
 if [[ -n "$zcompdump"(#qN.mh+24) ]]; then
     compinit -i -d "$zcompdump"
