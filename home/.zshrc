@@ -90,7 +90,7 @@ alias cleartarget="target.sh reset"
 
 export HISTORY_IGNORE="(sudo su|cat|ll|ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..|nvim|nano)"
 
-HISTFILE=~/.zsh_history
+HISTFILE=~/.config/zsh/zsh_history
 HISTSIZE=400
 SAVEHIST=400
 HISTDUP=erase
@@ -109,8 +109,19 @@ setopt hist_find_no_dups
 #             |_____|
 # Load some themes, settings, and other things.
 
-autoload -Uz compinit ; compinit
+autoload -Uz compinit
+
 local zcompdump="${HOME}/.config/zsh/zcompdump"
+
+if [[ -n "$zcompdump"(#qN.mh+24) ]]; then
+    compinit -i -d "$zcompdump"
+else
+    compinit -C -d "$zcompdump"
+fi
+
+if [[ ! -f "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc" ]]; then
+    zcompile -U "$zcompdump"
+fi
 
 autoload -Uz add-zsh-hook
 autoload -Uz vcs_info

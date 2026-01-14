@@ -12,5 +12,5 @@
 # Otherwise you can use the nuclear option.
 # Launch the polybar BarPwn.
 
-killall -q polybar ; killall -q homebar ; pidof -q homebar || { polybar -q homebar -c "${HOME}"/.config/bspwm/homebar/config.ini & }
+killall -q polybar ; killall -q homebar ; pidof -q homebar || { polybar -q homebar -c "${HOME}"/.config/bspwm/polybar/homebar/config.ini & }
 echo "The polybar homebar has launched..."

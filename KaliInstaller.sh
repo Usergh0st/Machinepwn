@@ -17,7 +17,7 @@
 # Author: Enríque González Aka (Usergh0st)
 # Repository: https://github.com/Usergh0st/Machinepwn.git
 # Mail: usergh0stmail@proton.me
-# Last Update: 12.01.2026 09:11 PM
+# Last Update: 13.01.2026 09:23 PM
 # Script Version: 1.3
 # Coutings atempt: 22
 
@@ -50,7 +50,7 @@ libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-de
 
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
-pkgs="polybar rofi alacritty zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol fzf \
+pkgs="polybar rofi alacritty zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol fzf psmisc \
      fastfetch papirus-icon-theme adwaita-icon-theme bat firefox-esr openvpn bleachbit mousepad feh eza"
 
 # Logo function | funcion del logo
