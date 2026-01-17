@@ -1,4 +1,4 @@
-|<img width="1431" height="607" alt="Image" src="https://github.com/user-attachments/assets/61b31b42-42b9-4760-b26a-e89c8ac6e734" />|
+|<img width="1431" height="607" alt="Machinepwn-preview" src="https://github.com/user-attachments/assets/61b31b42-42b9-4760-b26a-e89c8ac6e734" />|
 |---|
 
 ## **Machinepwn the environment for pentesting without losing elegance**

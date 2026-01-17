@@ -25,7 +25,11 @@
 
 # Open the terminal alacritty emulator.
 super + Return
-	alacritty
+	OpenApps.sh --terminal
+
+# Open the terminal alacritty emulator mode floating.
+super + alt + Return
+	OpenApps.sh --floating
 
 # Program launcher rofi and dmenu.
 # Create a rofi launcher applet.

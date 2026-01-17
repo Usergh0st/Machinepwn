@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch apt updates file
+
+[Path]
+PathModified=/var/cache/machinepwn/updates.txt
+
+[Install]
+WantedBy=default.target

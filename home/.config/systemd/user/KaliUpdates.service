@@ -1,0 +1,11 @@
+[Unit]
+Description=Check available APT updates.
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=${HOME}/.config/bspwm/src/KaliUpdates.sh --sync-polybar
+
+[Install]
+WantedBy=default.target
