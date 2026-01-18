@@ -17,9 +17,9 @@
 # Author: Enríque González Aka (Usergh0st)
 # Repository: https://github.com/Usergh0st/Machinepwn.git
 # Mail: usergh0stmail@proton.me
-# Last Update: 13.01.2026 09:23 PM
+# Last Update: 17.01.2026 06:48 PM
 # Script Version: 1.3
-# Coutings atempt: 22
+# Coutings atempt: 24
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
@@ -191,7 +191,7 @@ install_bspwm_sxhkd_and_others () {
 	fi
 
 	#if command -v picom; then
-	#	echo -e "${White}The picom compositor is already installed on your system."
+	#echo -e "${White}The picom compositor is already installed on your system."
 	#else
 		# Install picom with repository | instalar picom con el repositorio.
 		# echo -e "${White}Installing picom...${Reset}\n"
@@ -280,20 +280,6 @@ machinepwn_change_default_shell () {
 	fi
 }
 
-# Configure and enable some services | confugurando y habilitando algunos servicios
-machinepwn_configure_services () {
-
-	clear ; logo
-
-	echo -e "${White}Configure and enable some services...${Reset}" ; sleep 2
-
-	#sudo systemctl --user enable --now KaliUpdates.timer &>/dev/null
-	#sudo systemctl --user enable --now pulseaudio.service &>/dev/null
-
-	echo -e "${Green}Everything is ready services are enabled.${Reset}" ; sleep 1.2
-
-}
-
 # Install machinepwn configuration files function | funcion de instalacion de archivos de configuracion de machinepwn
 install_machinepwn_configurations () {
 
@@ -332,7 +318,9 @@ install_machinepwn_configurations () {
 	chmod +x * "${HOME}/.local/${folder}"
 
 	# Temporary text for modules updates | texto temporal para el modulo updates
-	echo '55' > "${HOME}/.cache/updates.txt"
+	sudo mkdir -p "/var/cache/machinepwn"
+	echo '0' > "/var/cache/machinepwn/updates.txt"
+	sudo chmod o+wr "/var/cache/machinepwn/updates.txt"
 
 	# Installing zsh sudo plugin | instalar el plugin sudo zshrc
 	sudo mkdir -p "/usr/share/zsh-sudo" ; cd "/usr/share/zsh-sudo"
@@ -348,22 +336,46 @@ install_machinepwn_configurations () {
 	echo -e "${Green}Machinepwn configuration installed correctly.${Reset}\n" ; sleep 3
 }
 
+
+# Configure and enable some services | confugurando y habilitando algunos servicios
+machinepwn_configure_services () {
+
+	clear ; logo
+
+	echo -e "${White}Configure and enable some services...${Reset}" ; sleep 2
+
+	# Open directory services | Abriendo el directorio de servicios
+	cd ${HOME}/.config/systemd/user
+
+	# Enable user services update polybar hook | Habilitando el servicio que actualiza el hook en la polybar
+	systemctl --user daemon-reload ; systemctl --user enable --now polybar-update.path
+
+	# Copying services kali update to /etc/systemd/system/ and enable | Copiando servicios de kali updates a /etc/systemd/system/
+	sudo cp "KaliUpdates.service" "KaliUpdates.timer" "/etc/systemd/system/" ; cd "/etc/systemd/system/"
+	sudo systemctl daemon-reexec ; sudo systemctl daemon-reload ; sudo systemctl enable --now KaliUpdates.timer
+	
+	# Copying the script in the working directory | Copiando el script en el directorio de trabajo
+	cd "${HOME}/.config/bspwm/src" ; sudo cp "KaliUpdates.sh" "/usr/local/bin/" ; sudo chmod +x "KaliUpdates.sh"
+
+	echo -e "${Green}Everything is ready services are enabled.${Reset}\n" ; sleep 1.2
+
+}
+
 machinepwn_final_steps () {
 	echo -e "${White}Deleting cloning folder and clean apt...${Reset}" ; sleep 2
 	
 	sudo rm -rf ${HOME}/cloning
-	sudo apt autoremove --purge &>/dev/null
 
 	echo -e "${Green}Almost everything is ready.${Reset}\n"
-	echo -ne "${White}Do you want to restart the system? ${LightRed}(y/n) ${Green}"
+	echo -ne "${White}Do you want to restart the system? ${LightRed}(y/n) ${Reset}"
 	read choice
 
 	if [ ${choice} == "y" ]; then
 		echo -e "${Green}Restarting the system...${Reset}" ; sleep 3
 		sudo systemctl reboot
 	else
-		echo -e "${LightRed}Aborting restart....${Reset}" ; sleep 3
-		echo -e "${LightRed}Exiting the script goodbye!${Reset}" ; sleep 3
+		echo -e "${LightRed}The user aborting restart...${Reset}" ; sleep 3
+		echo -e "${LightRed}Exiting the script goodbye!${Reset}\n" ; sleep 3
 		exit 0
 	fi
 }
@@ -377,6 +389,6 @@ install_bspwm_sxhkd_and_others
 Backup_old_configurations
 machinepwn_change_default_shell
 
-machinepwn_configure_services
 install_machinepwn_configurations
+machinepwn_configure_services
 machinepwn_final_steps
