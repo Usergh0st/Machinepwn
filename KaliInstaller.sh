@@ -319,7 +319,7 @@ install_machinepwn_configurations () {
 
 	# Temporary text for modules updates | texto temporal para el modulo updates
 	sudo mkdir -p "/var/cache/machinepwn"
-	echo '0' > "/var/cache/machinepwn/updates.txt"
+	sudo "echo '0' > /var/cache/machinepwn/updates.txt" &>/dev/null
 	sudo chmod o+wr "/var/cache/machinepwn/updates.txt"
 
 	# Installing zsh sudo plugin | instalar el plugin sudo zshrc
@@ -348,17 +348,16 @@ machinepwn_configure_services () {
 	cd ${HOME}/.config/systemd/user
 
 	# Enable user services update polybar hook | Habilitando el servicio que actualiza el hook en la polybar
-	systemctl --user daemon-reload ; systemctl --user enable --now polybar-update.path
+	systemctl --user daemon-reload ; systemctl --user enable --now polybar-update.path &>/dev/null ; systemctl --user enable --now polybar-update.service &>/dev/null
 
 	# Copying services kali update to /etc/systemd/system/ and enable | Copiando servicios de kali updates a /etc/systemd/system/
 	sudo cp "KaliUpdates.service" "KaliUpdates.timer" "/etc/systemd/system/" ; cd "/etc/systemd/system/"
-	sudo systemctl daemon-reexec ; sudo systemctl daemon-reload ; sudo systemctl enable --now KaliUpdates.timer
+	sudo systemctl daemon-reexec ; sudo systemctl daemon-reload ; sudo systemctl enable --now KaliUpdates.timer &>/dev/null ; sudo systemctl enable --now KaliUpdates.service &>/dev/null
 	
 	# Copying the script in the working directory | Copiando el script en el directorio de trabajo
 	cd "${HOME}/.config/bspwm/src" ; sudo cp "KaliUpdates.sh" "/usr/local/bin/" ; sudo chmod +x "KaliUpdates.sh"
 
 	echo -e "${Green}Everything is ready services are enabled.${Reset}\n" ; sleep 1.2
-
 }
 
 machinepwn_final_steps () {
