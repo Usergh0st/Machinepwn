@@ -38,10 +38,12 @@ Preview of how the polybar turned out; I created two configurations, one for pen
 > Pentesting bar
 
 - <img width="1919" height="28" alt="pentesting_bar" src="https://github.com/user-attachments/assets/38781fb8-195a-4605-986d-d039d62c6f85" />
+- <img width="1920" height="28" alt="pentesting_bar" src="https://github.com/user-attachments/assets/051558c7-d147-4e97-b89d-addf3d0d1e5c" />
 
 > Normal bar
 
-- <img width="1920" height="28" alt="Image" src="https://github.com/user-attachments/assets/1921cb25-edd7-46db-b2f1-24c9adec9d7f" />
+- <img width="1920" height="28" alt="normal_bar" src="https://github.com/user-attachments/assets/1921cb25-edd7-46db-b2f1-24c9adec9d7f" />
+- <img width="1919" height="28" alt="normal_bar" src="https://github.com/user-attachments/assets/a89fc65a-f605-4771-a6a8-186ddee42ee5" />
 
 Finally, an overview of what the terminal looks like with powerlevel10k fzf and other utilities.
 

@@ -17,9 +17,9 @@
 # Author: Enríque González Aka (Usergh0st)
 # Repository: https://github.com/Usergh0st/Machinepwn.git
 # Mail: usergh0stmail@proton.me
-# Last Update: 17.01.2026 06:48 PM
+# Last Update: 21.01.2026 06:48 PM
 # Script Version: 1.3
-# Coutings atempt: 24
+# Coutings atempt: 27
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
@@ -85,7 +85,7 @@ LOGO
   printf '%b\n' "${Reset}"
 }
 
-# Fetch or traps ctrl_c | function para traquear el ctrl_c y salir.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+# Fetch or traps ctrl_c | function para traquear el ctrl_c y salir.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 trap ctrl_c INT
 function ctrl_c () {
 	echo -e "${LightRed} Exiting the script goodbye! ${Reset}\n"
@@ -355,7 +355,7 @@ machinepwn_configure_services () {
 	sudo systemctl daemon-reexec ; sudo systemctl daemon-reload ; sudo systemctl enable --now KaliUpdates.timer &>/dev/null ; sudo systemctl enable --now KaliUpdates.service &>/dev/null
 	
 	# Copying the script in the working directory | Copiando el script en el directorio de trabajo
-	cd "${HOME}/.config/bspwm/src" ; sudo cp "KaliUpdates.sh" "/usr/local/bin/" ; sudo chmod +x "KaliUpdates.sh"
+	cd "${HOME}/.config/bspwm/src" ; sudo cp "KaliUpdates.sh" "/usr/local/bin/" ; sudo chmod +x "/usr/local/bin/KaliUpdates.sh"
 
 	echo -e "${Green}Everything is ready services are enabled.${Reset}\n" ; sleep 1.2
 }

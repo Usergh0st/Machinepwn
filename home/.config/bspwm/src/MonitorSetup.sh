@@ -4,7 +4,7 @@
 # File: MonitorSetup.sh
 # Description: Dynamic multi-monitor support and configuration for bspwm using xrandr
 # Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 18.12.2025
+# Date: 21.01.2026
 #
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2027-2027 Usergh0st <usergh0stmail@proton.me>
@@ -12,7 +12,7 @@
 # =========================================================================================
 
 # Xrandr cmd to get connected monitors and their resolutions.
-ouput_xrandr=$(xrandr -q)
+ouput_xrandr=$(xrandr)
 
 # Funtion to obtain monitor info.
 feth_monitor_info () {
@@ -43,17 +43,19 @@ case ${NUM_MONITORS} in
 
 		set -- $(feth_monitor_info "${monitor_1}")
 		mode_1="$1"
-		rate_2="$2"
+		rate_1="$2"
 
 		set -- $(feth_monitor_info "${monitor_2}")
 		mode_2="$1"
 		rate_2="$2"
 
 		xrandr --output "${monitor_1}" --primary --mode "${mode_1}" --pos 0x0 --auto --rate "${rate_1}" \
-			--output "${monitor_2}" --mode "${mode_2}" --right-of "${monitor_1}" --auto --rate "${rate_2}"
+		       --output "${monitor_2}" --mode "${mode_2}" --right-of "${monitor_1}" --auto --rate "${rate_2}"
 
 		bspc monitor "${monitor_1}" -d 1 2 3 4
 		bspc monitor "${monitor_2}" -d 5 6 7 8
 		bspc wm -O "${monitor_1}" "${monitor_2}"
 		;;
+	*)
+		echo "Only two monitors can be supported simultaneously."
 esac

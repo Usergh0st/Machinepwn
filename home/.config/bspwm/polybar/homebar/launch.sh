@@ -12,5 +12,7 @@
 # Otherwise you can use the nuclear option.
 # Launch the polybar BarPwn.
 
-killall -q polybar ; killall -q homebar ; pidof -q homebar || { polybar -q homebar -c "${HOME}"/.config/bspwm/polybar/homebar/config.ini & }
+for mon in $(polybar --list-monitors | cut -d":" -f1); do
+	MONITOR=$mon polybar -q homebar -c "${HOME}"/.config/bspwm/polybar/homebar/config.ini &
+done
 echo "The polybar homebar has launched..."
