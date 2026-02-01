@@ -26,7 +26,7 @@ dynamic_padding = true
 dynamic_title = true
 padding = { x = 10, y = 10 }
 startup_mode = "Windowed"
-title = "Machinepwn Alacritty"
+title = "Alacritty"
 resize_increments = true
 
 # Cursor configuration

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ===========================================================================
+# =================================================================
 #  __  __         __ __      _____   __
 # |  |/  |.---.-.|  |__|    |     |_|__|.-----.--.--.--.--.
 # |     < |  _  ||  |  |    |       |  ||     |  |  |_   _|
@@ -9,22 +9,20 @@
 #  _|   |_ |     |__ --||   _|  _  ||  |  ||  -__|   _|
 # |_______||__|__|_____||____|___._||__|__||_____|__|
 
-# Description: Kali Linux installer script for machinepwn desktop environment.
-# The installer script for machinepwn, for kali linux and debian based.
-# Only kali linux/debian avaliable installacion no others distros.
-# This script required root user passworld.
-
 # Author: Enríque González Aka (Usergh0st)
 # Repository: https://github.com/Usergh0st/Machinepwn.git
 # Mail: usergh0stmail@proton.me
-# Last Update: 21.01.2026 06:48 PM
-# Script Version: 1.3
-# Coutings atempt: 27
+# Date: 26.01.2026 09:49 PM
+
+# Description: Kali Linux installer script for machinepwn desktop
+# Environment, the installer script for machinepwn for kali linux
+# And debian based, only kali linux/debian avaliable installacion
+# No others distros this script required root user passworld.
 
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2026-2027 Usergh0st <usergh0stmail@proton.me>
 # Licensed under GPL-3.0 license
-# ==========================================================================
+# =================================================================
 
 # Colors use this script | colores en el script
 Cyan="\e[1;36m"
@@ -51,7 +49,7 @@ libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-de
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
 pkgs="polybar rofi alacritty zsh git wget curl net-tools xdotool pulseaudio-utils pulseaudio pavucontrol fzf psmisc \
-     fastfetch papirus-icon-theme adwaita-icon-theme bat firefox-esr openvpn bleachbit mousepad feh eza"
+     fastfetch papirus-icon-theme adwaita-icon-theme bat firefox-esr openvpn bleachbit mousepad feh eza xclip"
 
 # Logo function | funcion del logo
 logo () {
@@ -314,7 +312,7 @@ install_machinepwn_configurations () {
 
 	# Installing others thins | instalar otras cosas
 	folder="bin" ; mkdir -p "~/.local/${folder}"
-	cd "${HOME}/cloning/Machinepwn/misc" ; cp * "${HOME}/.local/${folder}"
+	cd "${HOME}/cloning/Machinepwn/misc" ; cp -r * "${HOME}/.local/${folder}"
 	chmod +x * "${HOME}/.local/${folder}"
 
 	# Temporary text for modules updates | texto temporal para el modulo updates
@@ -360,6 +358,7 @@ machinepwn_configure_services () {
 	echo -e "${Green}Everything is ready services are enabled.${Reset}\n" ; sleep 1.2
 }
 
+# The final steps | ultimos pasos finales para la instalacion
 machinepwn_final_steps () {
 	echo -e "${White}Deleting cloning folder and clean apt...${Reset}" ; sleep 2
 	

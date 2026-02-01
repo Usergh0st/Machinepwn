@@ -49,7 +49,7 @@ MonitorSetup.sh
 bspc config external_rules_command "${HOME}"/.config/bspwm/src/ExternalRules.sh
 
 # -- Aesthetics --
-bspc config border_width 2
+bspc config border_width 1
 bspc config window_gap 3
 bspc config top_padding 0
 bspc config bottom_padding 0
