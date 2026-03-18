@@ -2,7 +2,7 @@
 Description=Run KaliUpdates.service every 15 minutes.
 
 [Timer]
-OnBootSec=5m
+OnBootSec=10s
 OnUnitActiveSec=15min
 Persistent=true
 

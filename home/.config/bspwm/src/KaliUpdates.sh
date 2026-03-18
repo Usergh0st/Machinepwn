@@ -49,7 +49,7 @@ print_updates () {
 			sed 's/->/\x1b[32;1m\x1b[0m/g'
 		fi
 	else
-		printf "%bYour system is already updated%b\n" "${Yellow}" "${Red}"
+		printf "%b¡Your system is already updated!%b\n" "${Yellow}" "${Red}"
 	fi
 }
 

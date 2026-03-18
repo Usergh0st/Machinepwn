@@ -95,6 +95,13 @@ vmware-user-suid-wrapper &>/dev/null &
 # -- Start sxhkd daemon hotkey --
 pidof -q sxhkd || { sxhkd -c "${HOME}"/.config/bspwm/sxhkdrc & }
 
+# -- Start picom compositor --
+# -- You have 2 configs of picom, with virtual machines and physical hardware --
+# -- Default config used is "picom-machines-virtuals" for virtual machines --
+# -- You have animations with configuration "picom-physical-hardware" --
+# pidof -q picom || { picom --config "${HOME}"/.config/bspwm/picom/picom-physical-hardware.conf & }
+pidof -q picom || { picom --config "${HOME}"/.config/bspwm/picom/picom-machines-virtuals.conf & }
+
 # -- Restore wallpaper with nitrogen --
 # -- Remplaze with script in the future --
 # -- I made the script but it's very simple --

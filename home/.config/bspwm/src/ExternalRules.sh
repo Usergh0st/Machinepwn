@@ -40,6 +40,8 @@ case "${class}" in
 		result "state=floating focus=on center=on" ;;
 	firefox-esr)
 		result "focus=on follow=on" ;;
+	Anki)
+		result "state=floating focus=on center=on" ;;
 	# Alacritty floating terminal when open's
 	# Alacritty othrs function terminals
 	FloaTerm)

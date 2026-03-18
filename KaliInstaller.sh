@@ -44,7 +44,9 @@ zsh_sudo="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/refs/heads/master/pl
 
 # List of packages to install | lista de paquetes a instalar
 libs="libxcb-xkb-dev libxkbcommon-dev librsvg2-common build-essential libxcb1-dev libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-keysyms1-dev \
-      libxcb-xinerama0-dev libxcb-shape0-dev libxcb-cursor-dev pkg-config libxcb-icccm4-dev"
+      libxcb-xinerama0-dev libxcb-shape0-dev libxcb-cursor-dev pkg-config libxcb-icccm4-dev libconfig-dev libdbus-1-dev libegl-dev libev-dev libepoxy-dev \
+      libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev \
+      libxcb-randr0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev meson ninja-build uthash-dev"
 
 xorg="xserver-xorg-core xserver-xorg-video-fbdev xserver-xorg-input-all x11-xserver-utils xinit xinput"
 
@@ -188,13 +190,14 @@ install_bspwm_sxhkd_and_others () {
 		echo -e "${Green}sxhkd was installed.${Reset}\n" ; sleep 1.1
 	fi
 
-	#if command -v picom; then
-	#echo -e "${White}The picom compositor is already installed on your system."
-	#else
+	if command -v picom; then
+		echo -e "${White}The picom compositor is already installed on your system."
+	else
 		# Install picom with repository | instalar picom con el repositorio.
-		# echo -e "${White}Installing picom...${Reset}\n"
-		# cd picom ; make ; sudo make install ; cd ..
-	#fi
+		echo -e "${White}Installing picom...${Reset}\n"
+		cd picom ; meson setup --buildtype=release build  &>/dev/null ; ninja -C build &>/dev/null ; sudo ninja -C build install &>/dev/null ; cd ..
+		echo -e "${Green}picom was installed.${Reset}\n" ; sleep 1.1
+	fi
 }
 
 # Backup old configurations function | funcion de backup de configuraciones antiguas
@@ -317,7 +320,7 @@ install_machinepwn_configurations () {
 
 	# Temporary text for modules updates | texto temporal para el modulo updates
 	sudo mkdir -p "/var/cache/machinepwn"
-	sudo "echo '0' > /var/cache/machinepwn/updates.txt" &>/dev/null
+	echo '0' | sudo tee /var/cache/machinepwn/updates.txt &>/dev/null
 	sudo chmod o+wr "/var/cache/machinepwn/updates.txt"
 
 	# Installing zsh sudo plugin | instalar el plugin sudo zshrc
