@@ -22,6 +22,8 @@ Under construction.
 
 To install this environment, run the following commands below and read the warnings.
 
+#### **On Kali Linux\Debian based**
+
 ```bash
 # Download the installer in your home directory.
 curl -LO https://usergh0st.github.io/Machinepwn/KaliInstaller.sh
@@ -31,6 +33,8 @@ chmod +x KaliInstaller.sh ; ./KaliInstaller.sh
 ```
 
 > Warning this installer only works with debian-based distributions such as parrot/kali/debian.
+
+#### **On Arch Linux\Manjaro**
 
 ```bash
 # Download the installer in your home directory.

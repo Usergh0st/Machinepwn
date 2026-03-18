@@ -194,7 +194,7 @@ install_bspwm_sxhkd_and_others () {
 		echo -e "${White}The picom compositor is already installed on your system."
 	else
 		# Install picom with repository | instalar picom con el repositorio.
-		echo -e "${White}Installing picom...${Reset}\n"
+		echo -e "${White}Installing picom...${Reset}"
 		cd picom ; meson setup --buildtype=release build  &>/dev/null ; ninja -C build &>/dev/null ; sudo ninja -C build install &>/dev/null ; cd ..
 		echo -e "${Green}picom was installed.${Reset}\n" ; sleep 1.1
 	fi
