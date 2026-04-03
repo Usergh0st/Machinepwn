@@ -1,12 +1,12 @@
 #!/bin/sh
-# =================================================================
+# ================================================
+# Author: Enríque González Aka (Usergh0st)
 # File: OpenApps.sh
-# Author: Usergh0st
 # Description: Control apps to launch.
-# Repository: https://github/Usergh0st/Machinepwn.git
-# Date: 14.01.2026
+# Repository: https://github/Usergh0st/Machinepwn
+# Date: 18.03.2026
 # Licensed: under GPL-3 Licensed
-# ================================================================
+# ================================================
 
 case "${1}" in
 	# Terminal alacritty launch modes

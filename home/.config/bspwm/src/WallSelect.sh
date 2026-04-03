@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# ==========================================================
-# Author: Usergh0st
+# =========================================================
+# Author: Enríque González Aka (Usergh0st)
 # File: WallSelect.sh
 # Description: Simple script that sets a wallpaper.
-# Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 12.01.2026
-# ==========================================================
+# Repository: https://github.com/Usergh0st/Machinepwn
+# Date: 18.03.2026
+# Licensed: under GPL-3 Licensed
+# =========================================================
 
 # Variable feth walls directory.
 wallpapers_directory="${HOME}/.config/bspwm/walls"

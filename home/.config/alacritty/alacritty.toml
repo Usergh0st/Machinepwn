@@ -21,7 +21,7 @@
 
 [window]
 decorations = "Full"
-opacity = 1.0
+opacity = 0.9
 dynamic_padding = true
 dynamic_title = true
 padding = { x = 10, y = 10 }

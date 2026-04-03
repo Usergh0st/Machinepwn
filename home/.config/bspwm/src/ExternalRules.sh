@@ -1,11 +1,11 @@
 #!/bin/sh
-# =========================================================
-# Author: Usergh0st
+# =======================================================
+# Author: Enríque González Aka (Usergh0st)
 # File: ExternalRules.sh
 # Description: The external rules for bspwm.
-# Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 12.01.2026
-# =========================================================
+# Repository: https://github.com/Usergh0st/Machinepwn
+# Date: 18.03.2026
+# =======================================================
 
 wid=$1
 class=$2

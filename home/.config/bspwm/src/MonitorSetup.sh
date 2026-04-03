@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# ==========================================================================================
-# Author: Usergh0st
+# ========================================================================================
+# Author: Enríque González Aka (Usergh0st)
 # File: MonitorSetup.sh
 # Description: Dynamic multi-monitor support and configuration for bspwm using xrandr
-# Repository: https://github.com/Usergh0st/Machinepwn.git
-# Date: 21.01.2026
+# Repository: https://github.com/Usergh0st/Machinepwn
+# Date: 18.03.2026
 #
 # Copyright (C) 2025-2026 Usergh0st <usergh0stmail@proton.me>
 # Copyright (C) 2027-2027 Usergh0st <usergh0stmail@proton.me>
 # Licensed under GPL-3.0 license
-# =========================================================================================
+# ========================================================================================
 
 # Xrandr cmd to get connected monitors and their resolutions.
 ouput_xrandr=$(xrandr)
